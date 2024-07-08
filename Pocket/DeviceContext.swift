@@ -14,14 +14,14 @@ class DeviceContext: ObservableObject {
     @Published var volumeRoute: URL?
     @Published var storageSize: Double?
     @Published var firmwareVersion: String?
-    @Published var games: [String]
+    @Published var cores: [String]
 
-    init(firmwareVersion version: String? = nil, volumeRoute route: URL? = nil, storageSize: Double? = nil) {
+    init(firmwareVersion version: String? = nil, volumeRoute route: URL? = nil, storageSize: Double? = nil, cores: [String] = []) {
         self.deviceConnected = false
         self.firmwareVersion = version
         self.volumeRoute = route
         self.storageSize = storageSize
-        self.games = []
+        self.cores = cores
     }
     
     func getPrettyStorageCapacity() -> String? {

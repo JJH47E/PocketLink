@@ -30,9 +30,6 @@ struct DeviceOverviewView: View {
                         Text("Storage: \(storageSize)")
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
-                List(deviceContext.games, id: \.self) { game in
-                    Text(game)
-                }
             }.padding()
         }
     }
