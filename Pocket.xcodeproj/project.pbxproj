@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */; };
-		343FAC1B2C3C5B14007A3C77 /* CoresOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1A2C3C5B14007A3C77 /* CoresOverviewView.swift */; };
+		3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */; };
+		343FAC1B2C3C5B14007A3C77 /* SystemsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */; };
 		343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1E2C3C5DCC007A3C77 /* Platform.swift */; };
 		343FAC212C3C5FE9007A3C77 /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC202C3C5FE9007A3C77 /* GamesListView.swift */; };
 		346A17B02C3872A700B429FB /* PocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17AF2C3872A700B429FB /* PocketApp.swift */; };
@@ -46,7 +47,8 @@
 
 /* Begin PBXFileReference section */
 		340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOverviewView.swift; sourceTree = "<group>"; };
-		343FAC1A2C3C5B14007A3C77 /* CoresOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoresOverviewView.swift; sourceTree = "<group>"; };
+		3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
+		343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsOverviewView.swift; sourceTree = "<group>"; };
 		343FAC1E2C3C5DCC007A3C77 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		343FAC202C3C5FE9007A3C77 /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
 		346A17AC2C3872A700B429FB /* Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3427F6402CB2B1A200F28FB1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */,
+				343FAC202C3C5FE9007A3C77 /* GamesListView.swift */,
+				340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */,
+				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		346A17A32C3872A700B429FB = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 		346A17AE2C3872A700B429FB /* Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				3427F6402CB2B1A200F28FB1 /* Views */,
 				346A17EA2C3880BA00B429FB /* Utils */,
 				346A17AF2C3872A700B429FB /* PocketApp.swift */,
 				346A17B12C3872A700B429FB /* ContentView.swift */,
@@ -127,10 +141,7 @@
 				346A17DE2C38733900B429FB /* DeviceContext.swift */,
 				346A17E02C3873DB00B429FB /* GlobalCallbacks.swift */,
 				346A17E22C387DDF00B429FB /* DeviceInfo.swift */,
-				340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */,
-				343FAC1A2C3C5B14007A3C77 /* CoresOverviewView.swift */,
 				343FAC1E2C3C5DCC007A3C77 /* Platform.swift */,
-				343FAC202C3C5FE9007A3C77 /* GamesListView.swift */,
 			);
 			path = Pocket;
 			sourceTree = "<group>";
@@ -306,10 +317,11 @@
 				346A17E12C3873DB00B429FB /* GlobalCallbacks.swift in Sources */,
 				343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */,
 				346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */,
-				343FAC1B2C3C5B14007A3C77 /* CoresOverviewView.swift in Sources */,
+				343FAC1B2C3C5B14007A3C77 /* SystemsOverviewView.swift in Sources */,
 				346A17B22C3872A700B429FB /* ContentView.swift in Sources */,
 				346A17B42C3872A700B429FB /* Item.swift in Sources */,
 				346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */,
+				3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */,
 				346A17B02C3872A700B429FB /* PocketApp.swift in Sources */,
 				346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */,
 				346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */,

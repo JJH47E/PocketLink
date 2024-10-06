@@ -16,6 +16,7 @@ class DeviceContext: ObservableObject {
     @Published var storageSize: Double?
     @Published var firmwareVersion: String?
     @Published var cores: [String]
+    @Published var platforms: [Platform] = []
 
     init(firmwareVersion version: String? = nil, volumeRoute route: URL? = nil, storageSize: Double? = nil, cores: [String] = []) {
         self.deviceConnected = false

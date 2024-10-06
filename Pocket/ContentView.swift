@@ -12,7 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if context.deviceConnected {
-                DeviceOverviewView(deviceContext: context)
+                DeviceView(deviceContext: context)
             } else if context.connecting {
                 ProgressView()
             } else {

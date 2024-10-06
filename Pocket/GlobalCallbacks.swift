@@ -23,7 +23,7 @@ func diskAppearedCallback(disk: DADisk, context: UnsafeMutableRawPointer?) {
                         }
                         print("[DiskAppearedCallback] Connecting")
                         let jsonFilePath = volumeURL.appendingPathComponent("Analogue_Pocket.json").path
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                             print("[DiskAppearedCallback] Checking if info desc file exists")
                             if FileManager.default.fileExists(atPath: jsonFilePath) {
                                 DispatchQueue.main.async {
@@ -35,9 +35,11 @@ func diskAppearedCallback(disk: DADisk, context: UnsafeMutableRawPointer?) {
                                         context.storageSize = storageSize
                                     }
                                     readDeviceInfo(from: volumeURL, context: context)
+                                    readPlatforms(from: volumeURL, context: context)
                                 }
                             } else {
                                 print("[DiskAppearedCallback] Unable to find info json file")
+                                context.connecting = false
                             }
                         }
                     }

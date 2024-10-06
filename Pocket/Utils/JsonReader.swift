@@ -10,7 +10,7 @@ class JsonReader<T> where T: Decodable {
                 return results
             }
         } catch {
-            print("Error: \(error)")
+            print("[JsonReader] Error loading data from \(file.absoluteString). Detail: \(error)")
         }
 
         return nil

@@ -23,6 +23,7 @@ struct DeviceOverviewView: View {
                 Group {
                     Text("Analogue Pocket")
                         .font(.title)
+                        .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     if let version = deviceContext.firmwareVersion {
                         Text("Firmware Version: \(version)")
                     }
@@ -30,6 +31,7 @@ struct DeviceOverviewView: View {
                         Text("Storage: \(storageSize)")
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
+                Spacer()
             }.padding()
         }
     }

@@ -7,17 +7,43 @@
 
 import Foundation
 
+struct CodablePlatform: Decodable {
+    let platform: CodablePlatformInfo
+    
+    init(platform: CodablePlatformInfo) {
+        self.platform = platform
+    }
+}
+
+struct CodablePlatformInfo: Decodable {
+    let name: String
+    let manufacturer: String
+    let year: Int
+    
+    init(name: String, manufacturer: String, year: Int) {
+        self.name = name
+        self.manufacturer = manufacturer
+        self.year = year
+    }
+}
+
 struct Platform: Identifiable, Hashable {
     let id: UUID
     let name: String
     let manufacturer: String
-    let releaseYear: String
-    let games = ["Test", "Test2"]
+    let year: String
     
-    init(id: UUID, name: String, manufacturer: String, releaseYear: String) {
-        self.id = id
+    init(platform: CodablePlatformInfo) {
+        self.id = UUID()
+        self.name = platform.name
+        self.manufacturer = platform.manufacturer
+        self.year = String(platform.year)
+    }
+    
+    init(name: String, manufacturer: String, year: String) {
+        self.id = UUID()
         self.name = name
         self.manufacturer = manufacturer
-        self.releaseYear = releaseYear
+        self.year = year
     }
 }
