@@ -62,3 +62,36 @@ func readPlatforms(from path: URL, context: DeviceContext) -> Void {
         context.objectWillChange.send()
     }
 }
+
+func getCoreDataForPlatform(from path: URL, systemName: String) -> [CoreInfo] {
+    let coresPath = path.appendingPathComponent("Cores")
+    let fileManager = FileManager.default
+    
+    var cores: [String] = []
+    
+    do {
+        let files = try fileManager.contentsOfDirectory(at: coresPath, includingPropertiesForKeys: nil)
+        let filteredCores = files.filter { $0.pathExtension.lowercased() == systemName.lowercased() }
+        cores = filteredCores.map { $0.lastPathComponent }
+    } catch {
+        print("[DeviceUtils.GetCoreDataForPlatform] Error eumerating cores \(error.localizedDescription)")
+        return []
+    }
+    
+    print("[DeviceUtils.GetCoreDataForPlatform] Loaded Cores. Reading data")
+    
+    var result: [CoreInfo] = []
+    
+    for core in cores {
+        let filePath = coresPath.appendingPathComponent(core).appendingPathExtension("core.json")
+        
+        if let data = JsonReader<CodableCoreInfo>.loadData(from: filePath) {
+            result.append(CoreInfo(core: data.core.metadata))
+            print("[DeviceUtils.GetCoreDataForPlatform] Successfully loaded core: \(core)")
+        } else {
+            print("[DeviceUtils.GetCoreDataForPlatform] Error reading core data: \(core)")
+        }
+    }
+    
+    return result
+}

@@ -11,7 +11,7 @@
 		3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */; };
 		343FAC1B2C3C5B14007A3C77 /* SystemsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */; };
 		343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1E2C3C5DCC007A3C77 /* Platform.swift */; };
-		343FAC212C3C5FE9007A3C77 /* GamesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC202C3C5FE9007A3C77 /* GamesListView.swift */; };
+		343FAC212C3C5FE9007A3C77 /* SystemSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC202C3C5FE9007A3C77 /* SystemSelectView.swift */; };
 		346A17B02C3872A700B429FB /* PocketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17AF2C3872A700B429FB /* PocketApp.swift */; };
 		346A17B22C3872A700B429FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17B12C3872A700B429FB /* ContentView.swift */; };
 		346A17B42C3872A700B429FB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17B32C3872A700B429FB /* Item.swift */; };
@@ -26,6 +26,8 @@
 		346A17E52C38807D00B429FB /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E42C38807D00B429FB /* JsonReader.swift */; };
 		346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E62C38809100B429FB /* DeviceUtils.swift */; };
 		346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E82C3880B200B429FB /* FilesystemUtils.swift */; };
+		34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CA82CB2F169008D89B4 /* CoreInfo.swift */; };
+		34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CAA2CB2F539008D89B4 /* CoreListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,7 @@
 		3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsOverviewView.swift; sourceTree = "<group>"; };
 		343FAC1E2C3C5DCC007A3C77 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		343FAC202C3C5FE9007A3C77 /* GamesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListView.swift; sourceTree = "<group>"; };
+		343FAC202C3C5FE9007A3C77 /* SystemSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSelectView.swift; sourceTree = "<group>"; };
 		346A17AC2C3872A700B429FB /* Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346A17AF2C3872A700B429FB /* PocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketApp.swift; sourceTree = "<group>"; };
 		346A17B12C3872A700B429FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 		346A17E42C38807D00B429FB /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		346A17E62C38809100B429FB /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		346A17E82C3880B200B429FB /* FilesystemUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemUtils.swift; sourceTree = "<group>"; };
+		34B18CA82CB2F169008D89B4 /* CoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfo.swift; sourceTree = "<group>"; };
+		34B18CAA2CB2F539008D89B4 /* CoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */,
-				343FAC202C3C5FE9007A3C77 /* GamesListView.swift */,
+				343FAC202C3C5FE9007A3C77 /* SystemSelectView.swift */,
 				340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */,
 				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
+				34B18CAA2CB2F539008D89B4 /* CoreListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				346A17E02C3873DB00B429FB /* GlobalCallbacks.swift */,
 				346A17E22C387DDF00B429FB /* DeviceInfo.swift */,
 				343FAC1E2C3C5DCC007A3C77 /* Platform.swift */,
+				34B18CA82CB2F169008D89B4 /* CoreInfo.swift */,
 			);
 			path = Pocket;
 			sourceTree = "<group>";
@@ -311,7 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343FAC212C3C5FE9007A3C77 /* GamesListView.swift in Sources */,
+				343FAC212C3C5FE9007A3C77 /* SystemSelectView.swift in Sources */,
 				346A17E52C38807D00B429FB /* JsonReader.swift in Sources */,
 				340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */,
 				346A17E12C3873DB00B429FB /* GlobalCallbacks.swift in Sources */,
@@ -324,7 +330,9 @@
 				3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */,
 				346A17B02C3872A700B429FB /* PocketApp.swift in Sources */,
 				346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */,
+				34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */,
 				346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */,
+				34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
