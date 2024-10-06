@@ -13,6 +13,8 @@ struct ContentView: View {
         VStack {
             if context.deviceConnected {
                 DeviceOverviewView(deviceContext: context)
+            } else if context.connecting {
+                ProgressView()
             } else {
                 Text("No device detected")
             }

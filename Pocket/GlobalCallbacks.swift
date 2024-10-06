@@ -18,16 +18,26 @@ func diskAppearedCallback(disk: DADisk, context: UnsafeMutableRawPointer?) {
             if vendorKey == ANALOGUE_VENDOR_KEY {
                 if let volumeName = diskDesc[kDADiskDescriptionVolumeNameKey] as? String {
                     if let volumeURL = getVolumePath(for: volumeName) {
+                        DispatchQueue.main.async {
+                            context.connecting = true
+                        }
+                        print("[DiskAppearedCallback] Connecting")
                         let jsonFilePath = volumeURL.appendingPathComponent("Analogue_Pocket.json").path
-                        if FileManager.default.fileExists(atPath: jsonFilePath) {
-                            DispatchQueue.main.async {
-                                print("CONNECTED")
-                                context.deviceConnected = true
-                                context.volumeRoute = volumeURL
-                                if let storageSize = diskDesc[kDADiskDescriptionMediaSizeKey] as? Double {
-                                    context.storageSize = storageSize
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            print("[DiskAppearedCallback] Checking if info desc file exists")
+                            if FileManager.default.fileExists(atPath: jsonFilePath) {
+                                DispatchQueue.main.async {
+                                    print("[DiskAppearedCallback] Connected")
+                                    context.deviceConnected = true
+                                    context.volumeRoute = volumeURL
+                                    context.connecting = false
+                                    if let storageSize = diskDesc[kDADiskDescriptionMediaSizeKey] as? Double {
+                                        context.storageSize = storageSize
+                                    }
+                                    readDeviceInfo(from: volumeURL, context: context)
                                 }
-                                readDeviceInfo(from: volumeURL, context: context)
+                            } else {
+                                print("[DiskAppearedCallback] Unable to find info json file")
                             }
                         }
                     }

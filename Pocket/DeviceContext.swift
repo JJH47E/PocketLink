@@ -11,6 +11,7 @@ let SIZE_UNITS = ["B", "KB", "MB", "GB", "TB"]
 
 class DeviceContext: ObservableObject {
     @Published var deviceConnected: Bool
+    @Published var connecting: Bool
     @Published var volumeRoute: URL?
     @Published var storageSize: Double?
     @Published var firmwareVersion: String?
@@ -18,6 +19,7 @@ class DeviceContext: ObservableObject {
 
     init(firmwareVersion version: String? = nil, volumeRoute route: URL? = nil, storageSize: Double? = nil, cores: [String] = []) {
         self.deviceConnected = false
+        self.connecting = false
         self.firmwareVersion = version
         self.volumeRoute = route
         self.storageSize = storageSize
