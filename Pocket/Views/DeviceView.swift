@@ -17,7 +17,7 @@ struct DeviceView: View {
                     Text("Info")
                 }
             
-            SystemsOverviewView(platforms: deviceContext.platforms)
+            SystemsOverviewView(platforms: deviceContext.platforms, mountedDeviceURL: deviceContext.volumeRoute)
                 .cornerRadius(5)
                 .tabItem {
                     Text("Systems")

@@ -26,6 +26,9 @@
 		346A17E52C38807D00B429FB /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E42C38807D00B429FB /* JsonReader.swift */; };
 		346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E62C38809100B429FB /* DeviceUtils.swift */; };
 		346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E82C3880B200B429FB /* FilesystemUtils.swift */; };
+		34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9A2CB45889001EFEAB /* StringExtensions.swift */; };
+		34A35B9D2CB45A41001EFEAB /* CoreListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */; };
+		34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */; };
 		34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CA82CB2F169008D89B4 /* CoreInfo.swift */; };
 		34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CAA2CB2F539008D89B4 /* CoreListView.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +74,9 @@
 		346A17E42C38807D00B429FB /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		346A17E62C38809100B429FB /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		346A17E82C3880B200B429FB /* FilesystemUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemUtils.swift; sourceTree = "<group>"; };
+		34A35B9A2CB45889001EFEAB /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListItemView.swift; sourceTree = "<group>"; };
+		34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		34B18CA82CB2F169008D89B4 /* CoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfo.swift; sourceTree = "<group>"; };
 		34B18CAA2CB2F539008D89B4 /* CoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,6 +114,7 @@
 				340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */,
 				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
 				34B18CAA2CB2F539008D89B4 /* CoreListView.swift */,
+				34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 		346A17AE2C3872A700B429FB /* Pocket */ = {
 			isa = PBXGroup;
 			children = (
+				34A35B992CB4587F001EFEAB /* Extensions */,
 				3427F6402CB2B1A200F28FB1 /* Views */,
 				346A17EA2C3880BA00B429FB /* Utils */,
 				346A17AF2C3872A700B429FB /* PocketApp.swift */,
@@ -185,6 +193,15 @@
 				346A17E62C38809100B429FB /* DeviceUtils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		34A35B992CB4587F001EFEAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34A35B9A2CB45889001EFEAB /* StringExtensions.swift */,
+				34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,16 +340,19 @@
 				346A17E12C3873DB00B429FB /* GlobalCallbacks.swift in Sources */,
 				343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */,
 				346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */,
+				34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */,
 				343FAC1B2C3C5B14007A3C77 /* SystemsOverviewView.swift in Sources */,
 				346A17B22C3872A700B429FB /* ContentView.swift in Sources */,
 				346A17B42C3872A700B429FB /* Item.swift in Sources */,
 				346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */,
 				3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */,
 				346A17B02C3872A700B429FB /* PocketApp.swift in Sources */,
+				34A35B9D2CB45A41001EFEAB /* CoreListItemView.swift in Sources */,
 				346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */,
 				34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */,
 				346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */,
 				34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */,
+				34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

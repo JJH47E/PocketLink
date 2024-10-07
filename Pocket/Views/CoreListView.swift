@@ -24,21 +24,25 @@ struct CoreListView: View {
                     Text("No cores found. It is likely an error occurred.")
                         .padding()
                 } else {
-                    List {
+                    ScrollView {
                         ForEach(content) { core in
-                            Text(core.author)
+                            CoreListItemView(core: core)
                         }
-                    }
+                    }.frame(minHeight: 150)
                 }
             }
+        }.onChange(of: platform, initial: true) { _, __ in
+            loadContentIfAble()
         }
-        .onAppear {
-            if mountedVolumeUrl != nil {
-                loadContent()
-            } else {
-                isLoading.toggle()
-                content = []
-            }
+    }
+    
+    func loadContentIfAble() {
+        if mountedVolumeUrl != nil {
+            print("[CoreListView] Loading Core data for platform: \(platform)")
+            loadContent()
+        } else {
+            isLoading.toggle()
+            content = []
         }
     }
     

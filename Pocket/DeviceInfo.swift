@@ -19,5 +19,5 @@ class DeviceFirmware : Decodable {
 class DeviceRuntime : Decodable {
     let name: String
     let byte: Int
-    let build_date: String
+    let buildDate: String
 }

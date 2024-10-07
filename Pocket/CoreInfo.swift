@@ -26,30 +26,29 @@ struct CodableCore: Decodable {
 struct CodableCoreMetadata: Decodable {
     let description: String
     let author: String
-    // maybe try URL?
     let url: String
     let version: String
-    let dateRelease: Date
+    let dateRelease: String
 }
 
 struct CoreInfo: Identifiable, Hashable {
     let id: UUID
     let description: String
     let author: String
-    let url: String
+    let url: URL?
     let version: String
-    let dateRelease: Date
+    let dateRelease: Date?
     
     init(core: CodableCoreMetadata) {
         self.id = UUID()
         self.description = core.description
         self.author = core.author
-        self.url = core.url
+        self.url = URL(string: core.url)
         self.version = core.version
-        self.dateRelease = core.dateRelease
+        self.dateRelease = ISO8601DateFormatter().date(from: core.dateRelease)
     }
     
-    init(description: String, author: String, url: String, version: String, dateRelease: Date) {
+    init(description: String, author: String, url: URL, version: String, dateRelease: Date) {
         self.id = UUID()
         self.description = description
         self.author = author

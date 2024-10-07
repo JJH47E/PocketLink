@@ -49,7 +49,7 @@ func readPlatforms(from path: URL, context: DeviceContext) -> Void {
         let filePath = platformsPath.appendingPathComponent(platform)
         
         if let data = JsonReader<CodablePlatform>.loadData(from: filePath) {
-            result.append(Platform(platform: data.platform))
+            result.append(Platform(platform: data.platform, shortName: platform.withoutFileExtension()))
             print("[DeviceUtils.ReadPlatforms] Successfully loaded platform: \(platform)")
         } else {
             print("[DeviceUtils.ReadPlatforms] Error reading platform data: \(platform)")
@@ -83,13 +83,13 @@ func getCoreDataForPlatform(from path: URL, systemName: String) -> [CoreInfo] {
     var result: [CoreInfo] = []
     
     for core in cores {
-        let filePath = coresPath.appendingPathComponent(core).appendingPathExtension("core.json")
+        let filePath = coresPath.appendingPathComponent(core).appendingPathComponent("core.json")
         
         if let data = JsonReader<CodableCoreInfo>.loadData(from: filePath) {
             result.append(CoreInfo(core: data.core.metadata))
             print("[DeviceUtils.GetCoreDataForPlatform] Successfully loaded core: \(core)")
         } else {
-            print("[DeviceUtils.GetCoreDataForPlatform] Error reading core data: \(core)")
+            print("[DeviceUtils.GetCoreDataForPlatform] Error reading core data: \(core). Reading file: \(filePath.absoluteString)")
         }
     }
     

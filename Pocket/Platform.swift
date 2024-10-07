@@ -32,18 +32,21 @@ struct Platform: Identifiable, Hashable {
     let name: String
     let manufacturer: String
     let year: String
+    let shortName: String
     
-    init(platform: CodablePlatformInfo) {
+    init(platform: CodablePlatformInfo, shortName: String) {
         self.id = UUID()
         self.name = platform.name
         self.manufacturer = platform.manufacturer
         self.year = String(platform.year)
+        self.shortName = shortName
     }
     
-    init(name: String, manufacturer: String, year: String) {
+    init(name: String, manufacturer: String, year: String, shortName: String) {
         self.id = UUID()
         self.name = name
         self.manufacturer = manufacturer
         self.year = year
+        self.shortName = shortName
     }
 }
