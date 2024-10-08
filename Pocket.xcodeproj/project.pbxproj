@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */; };
+		3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */; };
+		3415FA042CB5B6D800503072 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA032CB5B6D800503072 /* Game.swift */; };
+		3415FA082CB5C21A00503072 /* GameOverviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */; };
 		3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */; };
 		343FAC1B2C3C5B14007A3C77 /* SystemsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */; };
 		343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAC1E2C3C5DCC007A3C77 /* Platform.swift */; };
@@ -52,6 +55,9 @@
 
 /* Begin PBXFileReference section */
 		340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOverviewView.swift; sourceTree = "<group>"; };
+		3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesOverviewView.swift; sourceTree = "<group>"; };
+		3415FA032CB5B6D800503072 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverviewWrapperView.swift; sourceTree = "<group>"; };
 		3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceView.swift; sourceTree = "<group>"; };
 		343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsOverviewView.swift; sourceTree = "<group>"; };
 		343FAC1E2C3C5DCC007A3C77 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
 				34B18CAA2CB2F539008D89B4 /* CoreListView.swift */,
 				34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */,
+				3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */,
+				3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +164,7 @@
 				346A17E22C387DDF00B429FB /* DeviceInfo.swift */,
 				343FAC1E2C3C5DCC007A3C77 /* Platform.swift */,
 				34B18CA82CB2F169008D89B4 /* CoreInfo.swift */,
+				3415FA032CB5B6D800503072 /* Game.swift */,
 			);
 			path = Pocket;
 			sourceTree = "<group>";
@@ -347,10 +356,13 @@
 				346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */,
 				3427F63F2CB2B0BA00F28FB1 /* DeviceView.swift in Sources */,
 				346A17B02C3872A700B429FB /* PocketApp.swift in Sources */,
+				3415FA082CB5C21A00503072 /* GameOverviewWrapperView.swift in Sources */,
 				34A35B9D2CB45A41001EFEAB /* CoreListItemView.swift in Sources */,
 				346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */,
 				34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */,
+				3415FA042CB5B6D800503072 /* Game.swift in Sources */,
 				346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */,
+				3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */,
 				34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */,
 				34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */,
 			);
@@ -512,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Pocket/Pocket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -521,6 +534,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = Pocket/Pocket.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -549,6 +564,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

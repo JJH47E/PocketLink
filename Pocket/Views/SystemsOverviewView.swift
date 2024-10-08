@@ -20,9 +20,11 @@ struct SystemsOverviewView: View {
                 TableColumn("Manufacturer", value: \.manufacturer)
                 TableColumn("Year", value: \.year)
             }
-        }.onChange(of: selectedPlatform) { new, old in
+        }.onChange(of: selectedPlatform) { old, new in
             if new != nil {
-                showSheet = true
+                if (!showSheet) {
+                    showSheet.toggle()
+                }
             }
         }.sheet(isPresented: $showSheet) {
             print("showing sheet")

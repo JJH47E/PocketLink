@@ -95,3 +95,46 @@ func getCoreDataForPlatform(from path: URL, systemName: String) -> [CoreInfo] {
     
     return result
 }
+
+func readGames(from path: URL) -> [Game] {
+    func savePathIfExists(gamePath: URL, fileManager: FileManager) -> URL? {
+        var components = gamePath.pathComponents
+        
+        if let index = components.lastIndex(of: "Assets") {
+            components[index] = "Saves"
+            var newPath = NSString.path(withComponents: components)
+            newPath = (newPath as NSString).deletingPathExtension
+            newPath = (newPath as NSString).appendingPathExtension("sav")!
+            let newUrl = URL(fileURLWithPath: newPath, isDirectory: gamePath.hasDirectoryPath)
+            
+            if (fileManager.fileExists(atPath: newUrl.path)) {
+                print("returning save path")
+                return newUrl
+            }
+        }
+        print("no save")
+        return nil
+    }
+    
+    let gamesPath = path.appendingPathComponent("Assets")
+    let fileManager = FileManager.default
+    
+    var result: [Game] = []
+        
+    do {
+        let systems = try fileManager.contentsOfDirectory(at: gamesPath, includingPropertiesForKeys: nil)
+        for romPlatform in systems {
+            let platformAssetsPath = romPlatform.appendingPathComponent("common")
+            let games = try fileManager.contentsOfDirectory(at: platformAssetsPath, includingPropertiesForKeys: nil)
+            let filteredGames = games.filter { !$0.hasDirectoryPath }
+            let platformGames = filteredGames.map { Game(name: $0.lastPathComponent, platform: romPlatform.lastPathComponent, path: $0, savePath: savePathIfExists(gamePath: $0, fileManager: fileManager)) }
+            result.append(contentsOf: platformGames)
+        }
+    } catch {
+        print("[DeviceUtils.ReadGames] Error eumerating games \(error.localizedDescription)")
+        return []
+    }
+    
+    print("[DeviceUtils.GetCoreDataForPlatform] Loaded games successfully")
+    return result
+}
