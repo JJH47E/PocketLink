@@ -14,6 +14,14 @@ This tool only works when the device is plugged in over USB & the USB transfer o
 - View all installed cores (adding cores yet to be implemented)
 - View & backup all games & battery saves
 
+## Screenshots
+
+![info-screenshot](./Assets/info_screenshot.png)
+
+![systems-screenshot](./Assets/systems_screenshot.png)
+
+![cores-screenshot](./Assets/cores_screenshot.png)
+
 ## Contributions
 
 Contributions are welcome, some features I'd like to have but haven't added yet are:
