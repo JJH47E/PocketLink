@@ -1,3 +1,3 @@
 # PocketLink
 
-![icon](./Assets/pocketx1.png)
+![icon](./Assets/pocketx2.png | width=256)
