@@ -62,16 +62,16 @@
 		343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemsOverviewView.swift; sourceTree = "<group>"; };
 		343FAC1E2C3C5DCC007A3C77 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		343FAC202C3C5FE9007A3C77 /* SystemSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSelectView.swift; sourceTree = "<group>"; };
-		346A17AC2C3872A700B429FB /* Pocket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		346A17AC2C3872A700B429FB /* PocketLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		346A17AF2C3872A700B429FB /* PocketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketApp.swift; sourceTree = "<group>"; };
 		346A17B12C3872A700B429FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		346A17B32C3872A700B429FB /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		346A17B52C3872A800B429FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		346A17B82C3872A800B429FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		346A17BA2C3872A800B429FB /* Pocket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pocket.entitlements; sourceTree = "<group>"; };
-		346A17BF2C3872A800B429FB /* PocketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		346A17BF2C3872A800B429FB /* PocketLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		346A17C32C3872A800B429FB /* PocketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketTests.swift; sourceTree = "<group>"; };
-		346A17C92C3872A800B429FB /* PocketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		346A17C92C3872A800B429FB /* PocketLinkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketLinkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		346A17CD2C3872A800B429FB /* PocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITests.swift; sourceTree = "<group>"; };
 		346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		346A17DE2C38733900B429FB /* DeviceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContext.swift; sourceTree = "<group>"; };
@@ -140,9 +140,9 @@
 		346A17AD2C3872A700B429FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				346A17AC2C3872A700B429FB /* Pocket.app */,
-				346A17BF2C3872A800B429FB /* PocketTests.xctest */,
-				346A17C92C3872A800B429FB /* PocketUITests.xctest */,
+				346A17AC2C3872A700B429FB /* PocketLink.app */,
+				346A17BF2C3872A800B429FB /* PocketLinkTests.xctest */,
+				346A17C92C3872A800B429FB /* PocketLinkUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,9 +216,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		346A17AB2C3872A700B429FB /* Pocket */ = {
+		346A17AB2C3872A700B429FB /* PocketLink */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 346A17D32C3872A800B429FB /* Build configuration list for PBXNativeTarget "Pocket" */;
+			buildConfigurationList = 346A17D32C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLink" */;
 			buildPhases = (
 				346A17A82C3872A700B429FB /* Sources */,
 				346A17A92C3872A700B429FB /* Frameworks */,
@@ -228,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = Pocket;
+			name = PocketLink;
 			productName = Pocket;
-			productReference = 346A17AC2C3872A700B429FB /* Pocket.app */;
+			productReference = 346A17AC2C3872A700B429FB /* PocketLink.app */;
 			productType = "com.apple.product-type.application";
 		};
-		346A17BE2C3872A800B429FB /* PocketTests */ = {
+		346A17BE2C3872A800B429FB /* PocketLinkTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 346A17D62C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketTests" */;
+			buildConfigurationList = 346A17D62C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLinkTests" */;
 			buildPhases = (
 				346A17BB2C3872A800B429FB /* Sources */,
 				346A17BC2C3872A800B429FB /* Frameworks */,
@@ -246,14 +246,14 @@
 			dependencies = (
 				346A17C12C3872A800B429FB /* PBXTargetDependency */,
 			);
-			name = PocketTests;
+			name = PocketLinkTests;
 			productName = PocketTests;
-			productReference = 346A17BF2C3872A800B429FB /* PocketTests.xctest */;
+			productReference = 346A17BF2C3872A800B429FB /* PocketLinkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		346A17C82C3872A800B429FB /* PocketUITests */ = {
+		346A17C82C3872A800B429FB /* PocketLinkUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 346A17D92C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketUITests" */;
+			buildConfigurationList = 346A17D92C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLinkUITests" */;
 			buildPhases = (
 				346A17C52C3872A800B429FB /* Sources */,
 				346A17C62C3872A800B429FB /* Frameworks */,
@@ -264,9 +264,9 @@
 			dependencies = (
 				346A17CB2C3872A800B429FB /* PBXTargetDependency */,
 			);
-			name = PocketUITests;
+			name = PocketLinkUITests;
 			productName = PocketUITests;
-			productReference = 346A17C92C3872A800B429FB /* PocketUITests.xctest */;
+			productReference = 346A17C92C3872A800B429FB /* PocketLinkUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +292,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 346A17A72C3872A700B429FB /* Build configuration list for PBXProject "Pocket" */;
+			buildConfigurationList = 346A17A72C3872A700B429FB /* Build configuration list for PBXProject "PocketLink" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -305,9 +305,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				346A17AB2C3872A700B429FB /* Pocket */,
-				346A17BE2C3872A800B429FB /* PocketTests */,
-				346A17C82C3872A800B429FB /* PocketUITests */,
+				346A17AB2C3872A700B429FB /* PocketLink */,
+				346A17BE2C3872A800B429FB /* PocketLinkTests */,
+				346A17C82C3872A800B429FB /* PocketLinkUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,12 +390,12 @@
 /* Begin PBXTargetDependency section */
 		346A17C12C3872A800B429FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 346A17AB2C3872A700B429FB /* Pocket */;
+			target = 346A17AB2C3872A700B429FB /* PocketLink */;
 			targetProxy = 346A17C02C3872A800B429FB /* PBXContainerItemProxy */;
 		};
 		346A17CB2C3872A800B429FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 346A17AB2C3872A700B429FB /* Pocket */;
+			target = 346A17AB2C3872A700B429FB /* PocketLink */;
 			targetProxy = 346A17CA2C3872A800B429FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -534,6 +534,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PocketLink;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -564,6 +565,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = PocketLink;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -594,7 +596,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pocket";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PocketLink";
 			};
 			name = Debug;
 		};
@@ -613,7 +615,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocket.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pocket";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PocketLink";
 			};
 			name = Release;
 		};
@@ -654,7 +656,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		346A17A72C3872A700B429FB /* Build configuration list for PBXProject "Pocket" */ = {
+		346A17A72C3872A700B429FB /* Build configuration list for PBXProject "PocketLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				346A17D12C3872A800B429FB /* Debug */,
@@ -663,7 +665,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		346A17D32C3872A800B429FB /* Build configuration list for PBXNativeTarget "Pocket" */ = {
+		346A17D32C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLink" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				346A17D42C3872A800B429FB /* Debug */,
@@ -672,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		346A17D62C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketTests" */ = {
+		346A17D62C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLinkTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				346A17D72C3872A800B429FB /* Debug */,
@@ -681,7 +683,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		346A17D92C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketUITests" */ = {
+		346A17D92C3872A800B429FB /* Build configuration list for PBXNativeTarget "PocketLinkUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				346A17DA2C3872A800B429FB /* Debug */,
