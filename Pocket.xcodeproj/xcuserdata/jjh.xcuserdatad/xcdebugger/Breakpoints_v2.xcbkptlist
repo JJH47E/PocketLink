@@ -14,9 +14,9 @@
             filePath = "Pocket/GlobalCallbacks.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "diskAppearedCallback(disk:context:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "diskAppearedCallback(disk:sessionContext:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,9 +30,9 @@
             filePath = "Pocket/GlobalCallbacks.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "diskAppearedCallback(disk:context:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "diskAppearedCallback(disk:sessionContext:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +46,9 @@
             filePath = "Pocket/GlobalCallbacks.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "diskAppearedCallback(disk:context:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "diskAppearedCallback(disk:sessionContext:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,8 +78,8 @@
             filePath = "Pocket/Utils/FilesystemUtils.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "getVolumePath(for:)"
             landmarkType = "9">
          </BreakpointContent>

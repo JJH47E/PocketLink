@@ -10,8 +10,34 @@ import DiskArbitration
 
 let ANALOGUE_VENDOR_KEY = "Analogue"
 
-func diskAppearedCallback(disk: DADisk, context: UnsafeMutableRawPointer?) {
-    let context = Unmanaged<DeviceContext>.fromOpaque(context!).takeUnretainedValue()
+// TODO: run callback when mounted
+func checkForMountedDisks(sessionContext: DASession) -> Void {
+    let mountedVolumes = FileManager.default.mountedVolumeURLs(includingResourceValuesForKeys: nil, options: [])
+    
+    mountedVolumes?.forEach { volumeURL in
+        if let disk = DADiskCreateFromVolumePath(kCFAllocatorDefault, sessionContext, volumeURL as CFURL) {
+            diskAppearedCallback(disk: disk, sessionContext: Unmanaged.passUnretained(sessionContext).toOpaque())
+        }
+    }
+}
+
+func diskMountedCallback(disk: DADisk, sessionContext: Optional<UnsafeMutableRawPointer>) -> Optional<Unmanaged<DADissenter>> {
+    diskAppearedCallback(disk: disk, sessionContext: sessionContext)
+    return nil
+}
+
+func diskUnmountedCallback(disk: DADisk, sessionContext: UnsafeMutableRawPointer?) -> Void {
+    print("[DiskUnmountedCallback] Unmounting disk")
+    let context = Unmanaged<DeviceContext>.fromOpaque(sessionContext!).takeUnretainedValue()
+    
+    DispatchQueue.main.async() {
+        print("[DiskUnmountedCallback] Resetting context")
+        context.reset()
+    }
+}
+
+func diskAppearedCallback(disk: DADisk, sessionContext: Optional<UnsafeMutableRawPointer>) -> Void {
+    let context = Unmanaged<DeviceContext>.fromOpaque(sessionContext!).takeUnretainedValue()
     
     if let diskDesc = DADiskCopyDescription(disk) as NSDictionary? {
         if let vendorKey = diskDesc[kDADiskDescriptionDeviceVendorKey] as? String {
@@ -23,7 +49,7 @@ func diskAppearedCallback(disk: DADisk, context: UnsafeMutableRawPointer?) {
                         }
                         print("[DiskAppearedCallback] Connecting")
                         let jsonFilePath = volumeURL.appendingPathComponent("Analogue_Pocket.json").path
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // Allow some time for volume to be mounted. Can be improved!
                             print("[DiskAppearedCallback] Checking if info desc file exists")
                             if FileManager.default.fileExists(atPath: jsonFilePath) {
                                 DispatchQueue.main.async {

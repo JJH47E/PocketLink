@@ -26,10 +26,13 @@ struct ContentView: View {
     func startDiskArbitration() {
         let contextPointer = Unmanaged.passUnretained(context).toOpaque()
         
-        let session = DASessionCreate(kCFAllocatorDefault)
+        guard let session = DASessionCreate(kCFAllocatorDefault) else {
+            fatalError("[ContentView] Unable to start disk arbitration")
+        }
         
-        DARegisterDiskAppearedCallback(session!, nil, diskAppearedCallback, contextPointer)
-        DASessionScheduleWithRunLoop(session!, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
+        DARegisterDiskAppearedCallback(session, nil, diskAppearedCallback, contextPointer)
+        DARegisterDiskDisappearedCallback(session, nil, diskUnmountedCallback, contextPointer)
+        DASessionScheduleWithRunLoop(session, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
     }
 }
 

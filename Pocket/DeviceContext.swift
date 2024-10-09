@@ -42,4 +42,12 @@ class DeviceContext: ObservableObject {
         
         return "\(Int(round(storageCapacity)))\(SIZE_UNITS[scaleCounter])"
     }
+    
+    func reset() {
+        self.connecting = false
+        self.deviceConnected = false
+        self.volumeRoute = nil
+        self.cores = []
+        self.storageSize = nil
+    }
 }

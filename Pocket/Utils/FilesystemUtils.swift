@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppKit
 
 func getVolumePath(for volumeName: String) -> URL? {
     let path = "/Volumes/\(volumeName)"
@@ -19,4 +20,12 @@ func copyFile(source: URL, destination: URL) {
     } catch {
         print("[CopyFile] Error copying file from \(source.absoluteString) to \(destination.absoluteString): \(error)")
     }
+}
+
+func fileURL(from path: String) -> URL {
+    return URL(fileURLWithPath: path)
+}
+
+func openFinder(at url: URL) {
+    NSWorkspace.shared.open(fileURL(from: url.absoluteString))
 }

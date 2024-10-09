@@ -32,6 +32,15 @@ struct DeviceOverviewView: View {
                     }
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 Spacer()
+                HStack {
+                    Spacer()
+                    Button {
+                        openFinder(at: deviceContext.volumeRoute!)
+                        
+                    } label: {
+                        Text("Show in Finder")
+                    }.disabled(deviceContext.volumeRoute == nil)
+                }
             }.padding()
         }
     }
