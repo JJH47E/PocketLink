@@ -35,6 +35,9 @@
 		34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */; };
 		34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CA82CB2F169008D89B4 /* CoreInfo.swift */; };
 		34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CAA2CB2F539008D89B4 /* CoreListView.swift */; };
+		3121FCA9965D4AD4BE4C0C6D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5F3BF01524BE09E10B328 /* GitHubService.swift */; };
+		556B35E191C44068BC03468C /* CoreDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */; };
+		5939607E69724ADF8C449ED2 /* CoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		34B18CA82CB2F169008D89B4 /* CoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfo.swift; sourceTree = "<group>"; };
 		34B18CAA2CB2F539008D89B4 /* CoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListView.swift; sourceTree = "<group>"; };
+		C9B5F3BF01524BE09E10B328 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailViewModel.swift; sourceTree = "<group>"; };
+		1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +130,27 @@
 				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
 				34B18CAA2CB2F539008D89B4 /* CoreListView.swift */,
 				34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */,
+				1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */,
 				3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */,
 				3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7268F6D547D1469C96A831AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9B5F3BF01524BE09E10B328 /* GitHubService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6C38FA209A08462A9960EC01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		346A17A32C3872A700B429FB = {
@@ -155,6 +178,8 @@
 			children = (
 				34A35B992CB4587F001EFEAB /* Extensions */,
 				3427F6402CB2B1A200F28FB1 /* Views */,
+				7268F6D547D1469C96A831AC /* Services */,
+				6C38FA209A08462A9960EC01 /* ViewModels */,
 				346A17EA2C3880BA00B429FB /* Utils */,
 				346A17AF2C3872A700B429FB /* PocketApp.swift */,
 				346A17B12C3872A700B429FB /* ContentView.swift */,
@@ -369,6 +394,9 @@
 				3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */,
 				34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */,
 				34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */,
+				3121FCA9965D4AD4BE4C0C6D /* GitHubService.swift in Sources */,
+				556B35E191C44068BC03468C /* CoreDetailViewModel.swift in Sources */,
+				5939607E69724ADF8C449ED2 /* CoreDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

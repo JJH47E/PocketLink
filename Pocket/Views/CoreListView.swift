@@ -12,7 +12,9 @@ struct CoreListView: View {
     var platform: String
     @State private var isLoading: Bool = true
     @State private var content: [CoreInfo] = []
-    
+    @StateObject private var coreDetailViewModel = CoreDetailViewModel()
+    @State private var selectedCore: CoreInfo?
+
     var body: some View {
         VStack {
             if isLoading {
@@ -26,9 +28,18 @@ struct CoreListView: View {
                 } else {
                     ScrollView {
                         ForEach(content) { core in
-                            CoreListItemView(core: core)
+                            Button {
+                                selectedCore = core
+                            } label: {
+                                CoreListItemView(core: core)
+                            }
+                            .buttonStyle(.plain)
                         }
-                    }.frame(minHeight: 150)
+                    }
+                    .frame(minHeight: 150)
+                    .sheet(item: $selectedCore) { core in
+                        CoreDetailView(core: core, viewModel: coreDetailViewModel)
+                    }
                 }
             }
         }.onChange(of: platform, initial: true) { _, __ in

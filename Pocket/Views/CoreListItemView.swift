@@ -23,14 +23,6 @@ struct CoreListItemView: View {
                     Text(core.dateRelease!.localizedFormat(dateStyle: .long, timeStyle: .none))
                 }
             }.font(.title3).frame(maxWidth: .infinity, alignment: .leading)
-            if (core.url != nil) {
-                HStack {
-                    Spacer()
-                    Link(destination: core.url!) {
-                        Text(core.url!.absoluteString)
-                    }
-                }
-            }
         }.padding()
     }
 }
