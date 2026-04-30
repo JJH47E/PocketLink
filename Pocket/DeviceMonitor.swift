@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 import DiskArbitration
 
 private let analogueVendor = "Analogue"
@@ -15,8 +16,13 @@ class DeviceMonitor: ObservableObject {
     private var session: DASession?
     // Holds the passRetained reference so we can balance it in stop().
     private var selfPtr: Unmanaged<DeviceMonitor>?
+    // Forwards context's @Published changes up to DeviceMonitor so SwiftUI
+    // views observing the monitor re-render when device state changes.
+    private var contextSink: AnyCancellable?
 
     init() {
+        contextSink = context.objectWillChange
+            .sink { [weak self] _ in self?.objectWillChange.send() }
         start()
     }
 
