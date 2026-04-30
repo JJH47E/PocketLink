@@ -24,7 +24,7 @@ struct ContentView: View {
                         .multilineTextAlignment(.center)
                 }
             } else {
-                Text("No device detected")
+                NoDeviceView()
             }
         }
         .padding()

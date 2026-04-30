@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */; };
+		5CC1255084934EA69172D4B4 /* NoDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997F3AA67C7498C85563723 /* NoDeviceView.swift */; };
 		3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */; };
 		3415FA042CB5B6D800503072 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA032CB5B6D800503072 /* Game.swift */; };
 		3415FA082CB5C21A00503072 /* GameOverviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOverviewView.swift; sourceTree = "<group>"; };
+		9997F3AA67C7498C85563723 /* NoDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceView.swift; sourceTree = "<group>"; };
 		3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesOverviewView.swift; sourceTree = "<group>"; };
 		3415FA032CB5B6D800503072 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverviewWrapperView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				343FAC1A2C3C5B14007A3C77 /* SystemsOverviewView.swift */,
 				343FAC202C3C5FE9007A3C77 /* SystemSelectView.swift */,
 				340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */,
+				9997F3AA67C7498C85563723 /* NoDeviceView.swift */,
 				3427F63E2CB2B0BA00F28FB1 /* DeviceView.swift */,
 				34B18CAA2CB2F539008D89B4 /* CoreListView.swift */,
 				34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */,
@@ -346,6 +349,7 @@
 				343FAC212C3C5FE9007A3C77 /* SystemSelectView.swift in Sources */,
 				346A17E52C38807D00B429FB /* JsonReader.swift in Sources */,
 				340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */,
+				5CC1255084934EA69172D4B4 /* NoDeviceView.swift in Sources */,
 				5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */,
 				343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */,
 				346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */,
