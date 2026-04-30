@@ -7,32 +7,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var context = DeviceContext()
+    @StateObject private var monitor = DeviceMonitor()
 
     var body: some View {
         VStack {
-            if context.deviceConnected {
-                DeviceView(deviceContext: context)
-            } else if context.connecting {
+            if monitor.context.daSessionFailed {
+                Text("Unable to start device monitoring")
+            } else if monitor.context.deviceConnected {
+                DeviceView(deviceContext: monitor.context)
+            } else if monitor.context.connecting {
                 ProgressView()
             } else {
                 Text("No device detected")
             }
         }
         .padding()
-        .onAppear(perform: startDiskArbitration)
-    }
-    
-    func startDiskArbitration() {
-        let contextPointer = Unmanaged.passUnretained(context).toOpaque()
-        
-        guard let session = DASessionCreate(kCFAllocatorDefault) else {
-            fatalError("[ContentView] Unable to start disk arbitration")
-        }
-        
-        DARegisterDiskAppearedCallback(session, nil, diskAppearedCallback, contextPointer)
-        DARegisterDiskDisappearedCallback(session, nil, diskUnmountedCallback, contextPointer)
-        DASessionScheduleWithRunLoop(session, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
     }
 }
 

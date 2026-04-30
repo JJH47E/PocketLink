@@ -24,7 +24,7 @@
 		346A17CE2C3872A800B429FB /* PocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CD2C3872A800B429FB /* PocketUITests.swift */; };
 		346A17D02C3872A800B429FB /* PocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */; };
 		346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17DE2C38733900B429FB /* DeviceContext.swift */; };
-		346A17E12C3873DB00B429FB /* GlobalCallbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E02C3873DB00B429FB /* GlobalCallbacks.swift */; };
+		5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */; };
 		346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E22C387DDF00B429FB /* DeviceInfo.swift */; };
 		346A17E52C38807D00B429FB /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E42C38807D00B429FB /* JsonReader.swift */; };
 		346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E62C38809100B429FB /* DeviceUtils.swift */; };
@@ -75,7 +75,7 @@
 		346A17CD2C3872A800B429FB /* PocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITests.swift; sourceTree = "<group>"; };
 		346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		346A17DE2C38733900B429FB /* DeviceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContext.swift; sourceTree = "<group>"; };
-		346A17E02C3873DB00B429FB /* GlobalCallbacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalCallbacks.swift; sourceTree = "<group>"; };
+		860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		346A17E22C387DDF00B429FB /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		346A17E42C38807D00B429FB /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		346A17E62C38809100B429FB /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				346A17BA2C3872A800B429FB /* Pocket.entitlements */,
 				346A17B72C3872A800B429FB /* Preview Content */,
 				346A17DE2C38733900B429FB /* DeviceContext.swift */,
-				346A17E02C3873DB00B429FB /* GlobalCallbacks.swift */,
+				860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */,
 				346A17E22C387DDF00B429FB /* DeviceInfo.swift */,
 				343FAC1E2C3C5DCC007A3C77 /* Platform.swift */,
 				34B18CA82CB2F169008D89B4 /* CoreInfo.swift */,
@@ -346,7 +346,7 @@
 				343FAC212C3C5FE9007A3C77 /* SystemSelectView.swift in Sources */,
 				346A17E52C38807D00B429FB /* JsonReader.swift in Sources */,
 				340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */,
-				346A17E12C3873DB00B429FB /* GlobalCallbacks.swift in Sources */,
+				5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */,
 				343FAC1F2C3C5DCC007A3C77 /* Platform.swift in Sources */,
 				346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */,
 				34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */,
