@@ -16,7 +16,13 @@ struct ContentView: View {
             } else if monitor.context.deviceConnected {
                 DeviceView(deviceContext: monitor.context)
             } else if monitor.context.connecting {
-                ProgressView()
+                VStack(spacing: 12) {
+                    ProgressView()
+                    Text("Loading — the Pocket's USB connection is slow, this may take a moment.")
+                        .foregroundStyle(.secondary)
+                        .font(.callout)
+                        .multilineTextAlignment(.center)
+                }
             } else {
                 Text("No device detected")
             }
