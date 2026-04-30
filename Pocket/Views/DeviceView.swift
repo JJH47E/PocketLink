@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeviceView: View {
-    var deviceContext: DeviceContext
+    @ObservedObject var deviceContext: DeviceContext
     
     var body: some View {
         TabView {

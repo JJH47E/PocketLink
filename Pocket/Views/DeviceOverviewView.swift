@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct DeviceOverviewView: View {
-    // may need to make this state object?
-    var deviceContext: DeviceContext
+    @ObservedObject var deviceContext: DeviceContext
     
     var body: some View {
         HStack {
