@@ -43,6 +43,7 @@
 		9BF7E2B1DCF044908D00D766 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */; };
 		0B935C8AC16C4F618BB3E0E9 /* InstalledCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */; };
 		8D437AA96C72454595131281 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D748182B49B4D0FBEEC6819 /* NetworkService.swift */; };
+		FC5648C96C3805141BEC4F11 /* FirmwareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7BC6457410BE668DE0665 /* FirmwareService.swift */; };
 		837A6DF8587C4117A5167C5F /* CatalogFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */; };
 		CE3B4B5BE2E14AC4814E1DB4 /* GitHubReleaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */; };
 		70318342CC9043FB9206F932 /* CatalogCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */; };
@@ -114,6 +115,7 @@
 		08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRelease.swift; sourceTree = "<group>"; };
 		DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledCore.swift; sourceTree = "<group>"; };
 		9D748182B49B4D0FBEEC6819 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A8E7BC6457410BE668DE0665 /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
 		8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFetcher.swift; sourceTree = "<group>"; };
 		7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseFetcher.swift; sourceTree = "<group>"; };
 		22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCache.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				C9B5F3BF01524BE09E10B328 /* GitHubService.swift */,
 				9D748182B49B4D0FBEEC6819 /* NetworkService.swift */,
+				A8E7BC6457410BE668DE0665 /* FirmwareService.swift */,
 				8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */,
 				7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */,
 				22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */,
@@ -450,6 +453,7 @@
 				9BF7E2B1DCF044908D00D766 /* GitHubRelease.swift in Sources */,
 				0B935C8AC16C4F618BB3E0E9 /* InstalledCore.swift in Sources */,
 				8D437AA96C72454595131281 /* NetworkService.swift in Sources */,
+				FC5648C96C3805141BEC4F11 /* FirmwareService.swift in Sources */,
 				837A6DF8587C4117A5167C5F /* CatalogFetcher.swift in Sources */,
 				CE3B4B5BE2E14AC4814E1DB4 /* GitHubReleaseFetcher.swift in Sources */,
 				70318342CC9043FB9206F932 /* CatalogCache.swift in Sources */,

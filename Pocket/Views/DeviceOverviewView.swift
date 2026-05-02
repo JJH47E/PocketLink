@@ -24,7 +24,14 @@ struct DeviceOverviewView: View {
                         .font(.title)
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     if let version = deviceContext.firmwareVersion {
-                        Text("Firmware Version: \(version)")
+                        HStack(spacing: 6) {
+                            Text("Firmware Version: \(version)")
+                            if deviceContext.latestFirmwareVersion != nil {
+                                Text("Update available")
+                                    .font(.caption)
+                                    .foregroundColor(.orange)
+                            }
+                        }
                     }
                     if let storageSize = deviceContext.getPrettyStorageCapacity() {
                         Text("Storage: \(storageSize)")
