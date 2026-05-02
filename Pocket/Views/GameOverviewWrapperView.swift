@@ -48,8 +48,9 @@ struct GameOverviewWrapperView: View {
     }
 
     func loadContent() {
+        guard let url = mountedVolumeUrl else { return }
         DispatchQueue.global().async {
-            let fetchedData = readGames(from: mountedVolumeUrl!)
+            let fetchedData = readGames(from: url)
             DispatchQueue.main.async {
                 content = fetchedData
                 isLoading = false
