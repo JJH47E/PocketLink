@@ -22,6 +22,9 @@
 		346A17B62C3872A800B429FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346A17B52C3872A800B429FB /* Assets.xcassets */; };
 		346A17B92C3872A800B429FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346A17B82C3872A800B429FB /* Preview Assets.xcassets */; };
 		346A17C42C3872A800B429FB /* PocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17C32C3872A800B429FB /* PocketTests.swift */; };
+		4E08410E3C71FB20BD2D15F9 /* ROMTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */; };
+		A27EBC3B5B16CC65C8535E12 /* PlatformPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */; };
+		A53EE80DDF4BFA894B131662 /* ROMTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */; };
 		346A17CE2C3872A800B429FB /* PocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CD2C3872A800B429FB /* PocketUITests.swift */; };
 		346A17D02C3872A800B429FB /* PocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */; };
 		346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17DE2C38733900B429FB /* DeviceContext.swift */; };
@@ -116,6 +119,9 @@
 		DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledCore.swift; sourceTree = "<group>"; };
 		9D748182B49B4D0FBEEC6819 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A8E7BC6457410BE668DE0665 /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
+		69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferService.swift; sourceTree = "<group>"; };
+		B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPickerView.swift; sourceTree = "<group>"; };
+		B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferServiceTests.swift; sourceTree = "<group>"; };
 		8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFetcher.swift; sourceTree = "<group>"; };
 		7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseFetcher.swift; sourceTree = "<group>"; };
 		22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCache.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */,
 				0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */,
 				16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */,
+				B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 				C9B5F3BF01524BE09E10B328 /* GitHubService.swift */,
 				9D748182B49B4D0FBEEC6819 /* NetworkService.swift */,
 				A8E7BC6457410BE668DE0665 /* FirmwareService.swift */,
+				69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */,
 				8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */,
 				7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */,
 				22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */,
@@ -260,6 +268,7 @@
 				956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */,
 				D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */,
 				554FDB058CD744BFA43D9259 /* CoreRemovalTests.swift */,
+				B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */,
 			);
 			path = PocketTests;
 			sourceTree = "<group>";
@@ -454,6 +463,8 @@
 				0B935C8AC16C4F618BB3E0E9 /* InstalledCore.swift in Sources */,
 				8D437AA96C72454595131281 /* NetworkService.swift in Sources */,
 				FC5648C96C3805141BEC4F11 /* FirmwareService.swift in Sources */,
+				4E08410E3C71FB20BD2D15F9 /* ROMTransferService.swift in Sources */,
+				A27EBC3B5B16CC65C8535E12 /* PlatformPickerView.swift in Sources */,
 				837A6DF8587C4117A5167C5F /* CatalogFetcher.swift in Sources */,
 				CE3B4B5BE2E14AC4814E1DB4 /* GitHubReleaseFetcher.swift in Sources */,
 				70318342CC9043FB9206F932 /* CatalogCache.swift in Sources */,
@@ -473,6 +484,7 @@
 				867AD99AE4504E189962ECD3 /* VersionComparisonTests.swift in Sources */,
 				191247D5CD7B431597F7226F /* CoreManagerViewModelTests.swift in Sources */,
 				A0E5193E9A2D45EAB24FC343 /* CoreRemovalTests.swift in Sources */,
+				A53EE80DDF4BFA894B131662 /* ROMTransferServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct GameOverviewWrapperView: View {
     var mountedVolumeUrl: URL?
+    var platforms: [Platform] = []
     @State private var isLoading: Bool = true
     @State private var content: [Game] = []
-    
+
     var body: some View {
         VStack {
             if isLoading {
@@ -23,14 +24,19 @@ struct GameOverviewWrapperView: View {
                     Text("No games found.")
                         .padding()
                 } else {
-                    GamesOverviewView(games: content)
+                    GamesOverviewView(
+                        games: content,
+                        platforms: platforms,
+                        volumeRoot: mountedVolumeUrl,
+                        onTransferComplete: loadContent
+                    )
                 }
             }
         }.onAppear() {
             loadContentIfAble()
         }
     }
-    
+
     func loadContentIfAble() {
         if mountedVolumeUrl != nil {
             print("[GameOverviewWrapperView] Loading game data")
@@ -40,7 +46,7 @@ struct GameOverviewWrapperView: View {
             content = []
         }
     }
-    
+
     func loadContent() {
         DispatchQueue.global().async {
             let fetchedData = readGames(from: mountedVolumeUrl!)

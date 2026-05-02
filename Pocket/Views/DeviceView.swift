@@ -23,7 +23,7 @@ struct DeviceView: View {
                     Text("Systems")
                 }
             
-            GameOverviewWrapperView(mountedVolumeUrl: deviceContext.volumeRoute)
+            GameOverviewWrapperView(mountedVolumeUrl: deviceContext.volumeRoute, platforms: deviceContext.platforms)
                 .tabItem {
                     Text("Games")
                 }
