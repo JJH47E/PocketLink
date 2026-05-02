@@ -87,6 +87,32 @@ func getCoreDataForPlatform(from path: URL, systemName: String) -> [CoreInfo] {
     return result
 }
 
+func getAllInstalledCores(from path: URL) -> [InstalledCore] {
+    let coresPath = path.appendingPathComponent("Cores")
+    let fileManager = FileManager.default
+
+    let folders: [URL]
+    do {
+        folders = try fileManager.contentsOfDirectory(
+            at: coresPath, includingPropertiesForKeys: nil
+        ).filter { $0.hasDirectoryPath }
+    } catch {
+        print("[DeviceUtils.GetAllInstalledCores] Error enumerating cores: \(error.localizedDescription)")
+        return []
+    }
+
+    var result: [InstalledCore] = []
+    for folder in folders {
+        let identifier = folder.lastPathComponent
+        let corePath = folder.appendingPathComponent("core.json")
+        if let data = JsonReader<CodableCoreInfo>.loadData(from: corePath) {
+            let meta = data.core.metadata
+            result.append(InstalledCore(id: identifier, version: meta.version, author: meta.author))
+        }
+    }
+    return result
+}
+
 func readGames(from path: URL) -> [Game] {
     func savePathIfExists(gamePath: URL, fileManager: FileManager) -> URL? {
         var components = gamePath.pathComponents

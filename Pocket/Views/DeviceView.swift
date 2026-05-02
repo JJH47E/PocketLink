@@ -27,6 +27,11 @@ struct DeviceView: View {
                 .tabItem {
                     Text("Games")
                 }
+
+            CoreManagerView(volumeRoute: deviceContext.volumeRoute)
+                .tabItem {
+                    Text("Cores")
+                }
         }.padding()
     }
 }
