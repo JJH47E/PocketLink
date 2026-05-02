@@ -6,19 +6,33 @@ import XCTest
 
 final class VersionComparisonTests: XCTestCase {
 
-    private let vm = CoreManagerViewModel()
+    // MARK: - VersionComparator
 
-    func testParseSimpleVersion() {
-        XCTAssertEqual(vm.parseVersion("1.2.3"), [1, 2, 3])
+    func testIsNewer_simpleVersion() {
+        XCTAssertTrue(VersionComparator.isNewer("1.2.3", than: "1.2.2"))
     }
 
-    func testParseVersionWithVPrefix() {
-        XCTAssertEqual(vm.parseVersion("v1.2.3"), [1, 2, 3])
+    func testIsNewer_vPrefix() {
+        XCTAssertTrue(VersionComparator.isNewer("v2.0", than: "1.9"))
     }
 
-    func testParsePartialVersion() {
-        XCTAssertEqual(vm.parseVersion("2.0"), [2, 0])
+    func testIsNewer_partialVersion() {
+        XCTAssertTrue(VersionComparator.isNewer("2.1", than: "2.0"))
     }
+
+    func testIsNewer_numericNotLexicographic() {
+        XCTAssertTrue(VersionComparator.isNewer("1.10", than: "1.9"))
+    }
+
+    func testIsNewer_equalVersions() {
+        XCTAssertFalse(VersionComparator.isNewer("1.2.3", than: "1.2.3"))
+    }
+
+    func testIsNewer_missingTrailingComponent() {
+        XCTAssertTrue(VersionComparator.isNewer("2.1.1", than: "2.1"))
+    }
+
+    // MARK: - CoreManagerViewModel integration
 
     func testCatalogVersionIsNewer() {
         let catalog = makeCatalogCore(id: "author.Core", version: "1.1.0")

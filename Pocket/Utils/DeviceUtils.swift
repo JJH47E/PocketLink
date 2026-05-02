@@ -31,19 +31,13 @@ func readPlatforms(from path: URL, context: DeviceContext) {
             let all = try fileManager.contentsOfDirectory(at: platformsPath, includingPropertiesForKeys: nil)
             files = all.filter { $0.pathExtension == "json" }
         } catch {
-            print("[DeviceUtils.ReadPlatforms] Error eumerating platforms \(error.localizedDescription)")
             return
         }
-
-        print("[DeviceUtils.ReadPlatforms] Loaded platforms. Reading data")
 
         var result: [Platform] = []
         for file in files {
             if let data = JsonReader<CodablePlatform>.loadData(from: file) {
                 result.append(Platform(platform: data.platform, shortName: file.lastPathComponent.withoutFileExtension()))
-                print("[DeviceUtils.ReadPlatforms] Successfully loaded platform: \(file.lastPathComponent)")
-            } else {
-                print("[DeviceUtils.ReadPlatforms] Error reading platform data: \(file.lastPathComponent)")
             }
         }
 
@@ -57,34 +51,19 @@ func readPlatforms(from path: URL, context: DeviceContext) {
 func getCoreDataForPlatform(from path: URL, systemName: String) -> [CoreInfo] {
     let coresPath = path.appendingPathComponent("Cores")
     let fileManager = FileManager.default
-    
-    var cores: [String] = []
-    
+
+    let cores: [String]
     do {
         let files = try fileManager.contentsOfDirectory(at: coresPath, includingPropertiesForKeys: nil)
-        let filteredCores = files.filter { $0.pathExtension.lowercased() == systemName.lowercased() }
-        cores = filteredCores.map { $0.lastPathComponent }
+        cores = files.filter { $0.pathExtension.lowercased() == systemName.lowercased() }.map { $0.lastPathComponent }
     } catch {
-        print("[DeviceUtils.GetCoreDataForPlatform] Error eumerating cores \(error.localizedDescription)")
         return []
     }
-    
-    print("[DeviceUtils.GetCoreDataForPlatform] Loaded Cores. Reading data")
-    
-    var result: [CoreInfo] = []
-    
-    for core in cores {
+
+    return cores.compactMap { core in
         let filePath = coresPath.appendingPathComponent(core).appendingPathComponent("core.json")
-        
-        if let data = JsonReader<CodableCoreInfo>.loadData(from: filePath) {
-            result.append(CoreInfo(core: data.core.metadata))
-            print("[DeviceUtils.GetCoreDataForPlatform] Successfully loaded core: \(core)")
-        } else {
-            print("[DeviceUtils.GetCoreDataForPlatform] Error reading core data: \(core). Reading file: \(filePath.absoluteString)")
-        }
+        return JsonReader<CodableCoreInfo>.loadData(from: filePath).map { CoreInfo(core: $0.core.metadata) }
     }
-    
-    return result
 }
 
 func getAllInstalledCores(from path: URL) -> [InstalledCore] {
@@ -97,61 +76,47 @@ func getAllInstalledCores(from path: URL) -> [InstalledCore] {
             at: coresPath, includingPropertiesForKeys: nil
         ).filter { $0.hasDirectoryPath }
     } catch {
-        print("[DeviceUtils.GetAllInstalledCores] Error enumerating cores: \(error.localizedDescription)")
         return []
     }
 
-    var result: [InstalledCore] = []
-    for folder in folders {
-        let identifier = folder.lastPathComponent
+    return folders.compactMap { folder in
         let corePath = folder.appendingPathComponent("core.json")
-        if let data = JsonReader<CodableCoreInfo>.loadData(from: corePath) {
-            let meta = data.core.metadata
-            result.append(InstalledCore(id: identifier, version: meta.version, author: meta.author))
-        }
+        guard let data = JsonReader<CodableCoreInfo>.loadData(from: corePath) else { return nil }
+        let meta = data.core.metadata
+        return InstalledCore(id: folder.lastPathComponent, version: meta.version, author: meta.author)
     }
-    return result
 }
 
 func readGames(from path: URL) -> [Game] {
     func savePathIfExists(gamePath: URL, fileManager: FileManager) -> URL? {
         var components = gamePath.pathComponents
-        
-        if let index = components.lastIndex(of: "Assets") {
-            components[index] = "Saves"
-            var newPath = NSString.path(withComponents: components)
-            newPath = (newPath as NSString).deletingPathExtension
-            newPath = (newPath as NSString).appendingPathExtension("sav")!
-            let newUrl = URL(fileURLWithPath: newPath, isDirectory: gamePath.hasDirectoryPath)
-            
-            if (fileManager.fileExists(atPath: newUrl.path)) {
-                print("returning save path")
-                return newUrl
-            }
-        }
-        print("no save")
-        return nil
+        guard let index = components.lastIndex(of: "Assets") else { return nil }
+        components[index] = "Saves"
+        var newPath = NSString.path(withComponents: components)
+        newPath = (newPath as NSString).deletingPathExtension
+        newPath = (newPath as NSString).appendingPathExtension("sav")!
+        let newUrl = URL(fileURLWithPath: newPath, isDirectory: gamePath.hasDirectoryPath)
+        return fileManager.fileExists(atPath: newUrl.path) ? newUrl : nil
     }
-    
+
     let gamesPath = path.appendingPathComponent("Assets")
     let fileManager = FileManager.default
-    
+
     var result: [Game] = []
-        
+
     do {
         let systems = try fileManager.contentsOfDirectory(at: gamesPath, includingPropertiesForKeys: nil)
         for romPlatform in systems {
             let platformAssetsPath = romPlatform.appendingPathComponent("common")
             let games = try fileManager.contentsOfDirectory(at: platformAssetsPath, includingPropertiesForKeys: nil)
-            let filteredGames = games.filter { !$0.hasDirectoryPath }
-            let platformGames = filteredGames.map { Game(name: $0.lastPathComponent, platform: romPlatform.lastPathComponent, path: $0, savePath: savePathIfExists(gamePath: $0, fileManager: fileManager)) }
+            let platformGames = games
+                .filter { !$0.hasDirectoryPath }
+                .map { Game(name: $0.lastPathComponent, platform: romPlatform.lastPathComponent, path: $0, savePath: savePathIfExists(gamePath: $0, fileManager: fileManager)) }
             result.append(contentsOf: platformGames)
         }
     } catch {
-        print("[DeviceUtils.ReadGames] Error eumerating games \(error.localizedDescription)")
         return []
     }
-    
-    print("[DeviceUtils.GetCoreDataForPlatform] Loaded games successfully")
+
     return result
 }

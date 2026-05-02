@@ -10,10 +10,8 @@ struct CatalogFetcher {
     /// Returns both raw JSON bytes (for caching) and decoded cores.
     func fetchCatalog() async throws -> (cores: [CatalogCore], rawData: Data) {
         let data = try await network.fetchRaw(url: Self.catalogURL)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         do {
-            let response = try decoder.decode(CatalogResponse.self, from: data)
+            let response = try JSONDecoder.snakeCase.decode(CatalogResponse.self, from: data)
             return (response.data, data)
         } catch {
             throw CoreManagerError.networkError(error)

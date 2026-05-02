@@ -49,10 +49,9 @@ struct CoreListView: View {
     
     func loadContentIfAble() {
         if mountedVolumeUrl != nil {
-            print("[CoreListView] Loading Core data for platform: \(platform)")
             loadContent()
         } else {
-            isLoading.toggle()
+            isLoading = false
             content = []
         }
     }

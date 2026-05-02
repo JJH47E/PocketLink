@@ -21,6 +21,8 @@ struct GamesOverviewView: View {
     @State private var showPlatformPicker = false
     @State private var currentPickerURL: URL? = nil
 
+    private let romTransferService = ROMTransferService()
+
     private var filteredGames: [Game] {
         guard !searchText.isEmpty else { return games }
         let query = searchText.lowercased()
@@ -32,7 +34,7 @@ struct GamesOverviewView: View {
     var body: some View {
         VStack {
             Table(of: Game.self, selection: $selectedGame) {
-                TableColumn("Platform", value: \.displayName)
+                TableColumn("Name", value: \.displayName)
                 TableColumn("Platform", value: \.platform)
             } rows: {
                 ForEach(filteredGames) { game in
@@ -72,7 +74,7 @@ struct GamesOverviewView: View {
                     openBackupAllDialog()
                 } label: {
                     Text("Backup All Saves")
-                }.disabled(backupAllButtonDisabled()).padding()
+                }.disabled(!canBackupAll).padding()
             }
         }
         .toolbar {
@@ -108,9 +110,8 @@ struct GamesOverviewView: View {
     }
 
     func processFiles(_ urls: [URL]) {
-        let service = ROMTransferService()
         for url in urls {
-            if let platform = service.resolvedPlatform(for: url, availablePlatforms: platforms) {
+            if let platform = romTransferService.resolvedPlatform(for: url, availablePlatforms: platforms) {
                 transferFile(url, to: platform)
             } else {
                 enqueueForPicker(url)
@@ -121,7 +122,7 @@ struct GamesOverviewView: View {
     func transferFile(_ url: URL, to platform: Platform) {
         guard let root = volumeRoot else { return }
         do {
-            try ROMTransferService().copyROM(source: url, platform: platform, volumeRoot: root)
+            try romTransferService.copyROM(source: url, platform: platform, volumeRoot: root)
             onTransferComplete()
         } catch {
             showTransferError(error.localizedDescription)
@@ -150,14 +151,7 @@ struct GamesOverviewView: View {
 
     // MARK: - Backup (existing)
 
-    func backupAllButtonDisabled() -> Bool {
-        for game in games {
-            if (game.savePath != nil) {
-                return false
-            }
-        }
-        return true
-    }
+    private var canBackupAll: Bool { games.contains { $0.savePath != nil } }
 
     func openBackupAllDialog() {
         let panel = NSOpenPanel()
@@ -169,10 +163,12 @@ struct GamesOverviewView: View {
 
         if panel.runModal() == .OK, let selectedURL = panel.url {
             for game in games {
-                if (game.savePath == nil) {
-                    continue
+                guard let savePath = game.savePath else { continue }
+                do {
+                    try copyFile(source: savePath, destination: selectedURL.appendingPathComponent(savePath.lastPathComponent))
+                } catch {
+                    showTransferError(error.localizedDescription)
                 }
-                copyFile(source: game.savePath!, destination: selectedURL.appendingPathComponent(game.savePath!.lastPathComponent))
             }
         }
     }
@@ -185,7 +181,11 @@ struct GamesOverviewView: View {
         panel.nameFieldStringValue = filePath.lastPathComponent
 
         if panel.runModal() == .OK, let selectedURL = panel.url {
-            copyFile(source: filePath, destination: selectedURL)
+            do {
+                try copyFile(source: filePath, destination: selectedURL)
+            } catch {
+                showTransferError(error.localizedDescription)
+            }
         }
     }
 }

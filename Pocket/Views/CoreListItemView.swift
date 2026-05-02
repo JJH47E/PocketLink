@@ -16,7 +16,7 @@ struct CoreListItemView: View {
                 Text(core.author)
                 Spacer()
                 Text("v\(core.version)")
-            }.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }.font(.title)
             Group {
                 Text(core.description)
                 if (core.dateRelease != nil) {

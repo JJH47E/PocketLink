@@ -19,10 +19,17 @@ class DeviceMonitor: ObservableObject {
     // Forwards context's @Published changes up to DeviceMonitor so SwiftUI
     // views observing the monitor re-render when device state changes.
     private var contextSink: AnyCancellable?
+    // Triggers a firmware update check whenever firmwareVersion is set.
+    private var firmwareSink: AnyCancellable?
 
     init() {
         contextSink = context.objectWillChange
             .sink { [weak self] _ in self?.objectWillChange.send() }
+        firmwareSink = context.$firmwareVersion
+            .compactMap { $0 }
+            .sink { [weak self] installed in
+                Task { await self?.fetchFirmwareVersion(installed: installed) }
+            }
         start()
     }
 
@@ -110,6 +117,18 @@ class DeviceMonitor: ObservableObject {
         }
         readDeviceInfo(from: volumeURL, context: context)
         readPlatforms(from: volumeURL, context: context)
+    }
+
+    @MainActor
+    private func fetchFirmwareVersion(installed: String) async {
+        do {
+            let remote = try await FirmwareService().fetchLatestVersion()
+            if VersionComparator.isNewer(remote, than: installed) {
+                context.latestFirmwareVersion = remote
+            }
+        } catch {
+            // silent degradation — leave latestFirmwareVersion as nil
+        }
     }
 
     private func isAnalogue(disk: DADisk) -> Bool {

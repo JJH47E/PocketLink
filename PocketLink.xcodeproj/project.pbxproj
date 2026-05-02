@@ -33,7 +33,9 @@
 		346A17E52C38807D00B429FB /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E42C38807D00B429FB /* JsonReader.swift */; };
 		346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E62C38809100B429FB /* DeviceUtils.swift */; };
 		346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E82C3880B200B429FB /* FilesystemUtils.swift */; };
+		9EA5B50A19624203976BE618 /* VersionComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724ED63D38740CC9C98B6DE /* VersionComparator.swift */; };
 		34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9A2CB45889001EFEAB /* StringExtensions.swift */; };
+		1BA1258D756A4259B64F02CE /* JSONDecoder+Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */; };
 		34A35B9D2CB45A41001EFEAB /* CoreListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */; };
 		34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */; };
 		34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CA82CB2F169008D89B4 /* CoreInfo.swift */; };
@@ -105,7 +107,9 @@
 		346A17E42C38807D00B429FB /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		346A17E62C38809100B429FB /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		346A17E82C3880B200B429FB /* FilesystemUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemUtils.swift; sourceTree = "<group>"; };
+		F724ED63D38740CC9C98B6DE /* VersionComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparator.swift; sourceTree = "<group>"; };
 		34A35B9A2CB45889001EFEAB /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Pocket.swift"; sourceTree = "<group>"; };
 		34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListItemView.swift; sourceTree = "<group>"; };
 		34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		34B18CA82CB2F169008D89B4 /* CoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfo.swift; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				346A17E42C38807D00B429FB /* JsonReader.swift */,
+				F724ED63D38740CC9C98B6DE /* VersionComparator.swift */,
 				346A17E82C3880B200B429FB /* FilesystemUtils.swift */,
 				346A17E62C38809100B429FB /* DeviceUtils.swift */,
 			);
@@ -296,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				34A35B9A2CB45889001EFEAB /* StringExtensions.swift */,
+				B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */,
 				34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */,
 			);
 			path = Extensions;
@@ -433,6 +439,7 @@
 			files = (
 				343FAC212C3C5FE9007A3C77 /* SystemSelectView.swift in Sources */,
 				346A17E52C38807D00B429FB /* JsonReader.swift in Sources */,
+				9EA5B50A19624203976BE618 /* VersionComparator.swift in Sources */,
 				340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */,
 				5CC1255084934EA69172D4B4 /* NoDeviceView.swift in Sources */,
 				5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */,
@@ -454,6 +461,7 @@
 				3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */,
 				34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */,
 				34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */,
+				1BA1258D756A4259B64F02CE /* JSONDecoder+Pocket.swift in Sources */,
 				3121FCA9965D4AD4BE4C0C6D /* GitHubService.swift in Sources */,
 				556B35E191C44068BC03468C /* CoreDetailViewModel.swift in Sources */,
 				5939607E69724ADF8C449ED2 /* CoreDetailView.swift in Sources */,

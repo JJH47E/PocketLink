@@ -13,13 +13,8 @@ func getVolumePath(for volumeName: String) -> URL? {
     return URL(string: path)
 }
 
-func copyFile(source: URL, destination: URL) {
-    do {
-        try FileManager.default.copyItem(at: source, to: destination)
-        print("[CopyFile] File copied successfuly")
-    } catch {
-        print("[CopyFile] Error copying file from \(source.absoluteString) to \(destination.absoluteString): \(error)")
-    }
+func copyFile(source: URL, destination: URL) throws {
+    try FileManager.default.copyItem(at: source, to: destination)
 }
 
 func fileURL(from path: String) -> URL {
@@ -27,5 +22,5 @@ func fileURL(from path: String) -> URL {
 }
 
 func openFinder(at url: URL) {
-    NSWorkspace.shared.open(fileURL(from: url.absoluteString))
+    NSWorkspace.shared.activateFileViewerSelecting([url])
 }

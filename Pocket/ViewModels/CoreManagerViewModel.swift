@@ -17,11 +17,6 @@ class CoreManagerViewModel: ObservableObject {
     private let catalogFetcher = CatalogFetcher()
     private let cache = CatalogCache()
     private let installer = CoreInstaller()
-    private let decoder: JSONDecoder = {
-        let d = JSONDecoder()
-        d.keyDecodingStrategy = .convertFromSnakeCase
-        return d
-    }()
 
     // MARK: - Catalog
 
@@ -33,7 +28,7 @@ class CoreManagerViewModel: ObservableObject {
         do {
             let cores: [CatalogCore]
             if cache.isFresh, let cached = cache.read() {
-                let response = try decoder.decode(CatalogResponse.self, from: cached)
+                let response = try JSONDecoder.snakeCase.decode(CatalogResponse.self, from: cached)
                 cores = response.data
             } else {
                 let (fetched, rawData) = try await catalogFetcher.fetchCatalog()
@@ -44,7 +39,7 @@ class CoreManagerViewModel: ObservableObject {
             computeUpdates()
         } catch {
             if let cached = cache.read(),
-               let response = try? decoder.decode(CatalogResponse.self, from: cached) {
+               let response = try? JSONDecoder.snakeCase.decode(CatalogResponse.self, from: cached) {
                 catalogCores = response.data
                 computeUpdates()
             } else {
@@ -75,7 +70,7 @@ class CoreManagerViewModel: ObservableObject {
         let installedMap = Dictionary(uniqueKeysWithValues: installedCores.map { ($0.id.lowercased(), $0) })
         updatableCores = catalogCores.filter { catalog in
             guard let installed = installedMap[catalog.id.lowercased()] else { return false }
-            return isNewer(catalog.latestVersion, than: installed.version)
+            return VersionComparator.isNewer(catalog.latestVersion, than: installed.version)
         }
     }
 
@@ -142,22 +137,5 @@ class CoreManagerViewModel: ObservableObject {
         }
     }
 
-    // MARK: - Helpers
-
-    private func isNewer(_ candidate: String, than current: String) -> Bool {
-        let lhs = parseVersion(candidate)
-        let rhs = parseVersion(current)
-        for i in 0..<max(lhs.count, rhs.count) {
-            let l = i < lhs.count ? lhs[i] : 0
-            let r = i < rhs.count ? rhs[i] : 0
-            if l != r { return l > r }
-        }
-        return false
-    }
-
-    func parseVersion(_ version: String) -> [Int] {
-        let stripped = version.hasPrefix("v") ? String(version.dropFirst()) : version
-        return stripped.split(separator: ".").compactMap { Int($0) }
-    }
 }
 

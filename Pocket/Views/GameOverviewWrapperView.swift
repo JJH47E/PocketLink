@@ -39,10 +39,9 @@ struct GameOverviewWrapperView: View {
 
     func loadContentIfAble() {
         if mountedVolumeUrl != nil {
-            print("[GameOverviewWrapperView] Loading game data")
             loadContent()
         } else {
-            isLoading.toggle()
+            isLoading = false
             content = []
         }
     }

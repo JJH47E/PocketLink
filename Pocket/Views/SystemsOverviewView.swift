@@ -41,7 +41,6 @@ struct SystemsOverviewView: View {
                 }
             }
         }.sheet(isPresented: $showSheet) {
-            print("showing sheet")
         } content: {
             SystemSelectView(platform: platforms.first {
                 p in p.id == selectedPlatform
