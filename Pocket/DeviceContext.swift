@@ -23,6 +23,7 @@ class DeviceContext: ObservableObject {
     @Published var storageSize: Double?
     @Published var firmwareVersion: String?
     @Published var latestFirmwareVersion: String? = nil
+    @Published var isEjecting: Bool = false
     @Published var cores: [String]
     @Published var platforms: [Platform] = []
 
@@ -58,6 +59,7 @@ class DeviceContext: ObservableObject {
         self.volumeRoute = nil
         self.cores = []
         self.storageSize = nil
+        self.isEjecting = false
     }
 
 }

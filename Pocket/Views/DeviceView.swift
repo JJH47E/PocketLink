@@ -9,20 +9,21 @@ import SwiftUI
 
 struct DeviceView: View {
     @ObservedObject var deviceContext: DeviceContext
-    
+    var onEject: () -> Void = {}
+
     var body: some View {
         TabView {
-            DeviceOverviewView(deviceContext: deviceContext)
+            DeviceOverviewView(deviceContext: deviceContext, onEject: onEject)
                 .tabItem {
                     Text("Info")
                 }
-            
+
             SystemsOverviewView(platforms: deviceContext.platforms, mountedDeviceURL: deviceContext.volumeRoute)
                 .cornerRadius(5)
                 .tabItem {
                     Text("Systems")
                 }
-            
+
             GameOverviewWrapperView(mountedVolumeUrl: deviceContext.volumeRoute, platforms: deviceContext.platforms)
                 .tabItem {
                     Text("Games")

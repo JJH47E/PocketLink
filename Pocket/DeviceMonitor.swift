@@ -5,9 +5,10 @@
 //  Created by JJ Hayter on 30/04/2026.
 //
 
-import Foundation
+import AppKit
 import Combine
 import DiskArbitration
+import Foundation
 
 private let analogueVendor = "Analogue"
 
@@ -21,6 +22,8 @@ class DeviceMonitor: ObservableObject {
     private var contextSink: AnyCancellable?
     // Triggers a firmware update check whenever firmwareVersion is set.
     private var firmwareSink: AnyCancellable?
+    // Retained reference to the connected Analogue disk, used for eject.
+    private var currentDisk: DADisk?
 
     init() {
         contextSink = context.objectWillChange
@@ -75,7 +78,27 @@ class DeviceMonitor: ObservableObject {
         }
         selfPtr?.release()
         selfPtr = nil
+        currentDisk = nil
     }
+
+    // MARK: - Eject
+
+    func eject() {
+        guard let volumeURL = context.volumeRoute else { return }
+        context.isEjecting = true
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            do {
+                try NSWorkspace.shared.unmountAndEjectDevice(at: volumeURL)
+                // daDisappearedCallback fires when the disk disappears and will call
+                // diskDisappeared(), but reset here too in case it doesn't fire.
+                DispatchQueue.main.async { self?.context.reset() }
+            } catch {
+                DispatchQueue.main.async { self?.context.isEjecting = false }
+            }
+        }
+    }
+
+    // MARK: - DA event handlers
 
     fileprivate func diskAppeared(disk: DADisk) {
         guard isAnalogue(disk: disk) else { return }
@@ -104,10 +127,13 @@ class DeviceMonitor: ObservableObject {
     }
 
     fileprivate func diskDisappeared() {
-        DispatchQueue.main.async { self.context.reset() }
+        currentDisk = nil
+        // DA callbacks are scheduled on the main run loop — call reset() directly.
+        context.reset()
     }
 
     private func connectDevice(disk: DADisk, volumeURL: URL) {
+        currentDisk = disk
         let storageSize = (DADiskCopyDescription(disk) as NSDictionary?)?[kDADiskDescriptionMediaSizeKey] as? Double
         DispatchQueue.main.async {
             self.context.deviceConnected = true

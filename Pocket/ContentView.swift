@@ -14,7 +14,7 @@ struct ContentView: View {
             if monitor.context.daSessionFailed {
                 Text("Unable to start device monitoring")
             } else if monitor.context.deviceConnected {
-                DeviceView(deviceContext: monitor.context)
+                DeviceView(deviceContext: monitor.context, onEject: { monitor.eject() })
             } else if monitor.context.connecting {
                 VStack(spacing: 12) {
                     ProgressView()

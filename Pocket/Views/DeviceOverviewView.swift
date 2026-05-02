@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DeviceOverviewView: View {
     @ObservedObject var deviceContext: DeviceContext
-    
+    var onEject: () -> Void = {}
+
     var body: some View {
         HStack {
             VStack {
@@ -41,8 +42,13 @@ struct DeviceOverviewView: View {
                 HStack {
                     Spacer()
                     Button {
+                        onEject()
+                    } label: {
+                        Label("Eject", systemImage: "eject")
+                    }
+                    .disabled(deviceContext.volumeRoute == nil || deviceContext.isEjecting)
+                    Button {
                         openFinder(at: deviceContext.volumeRoute!)
-                        
                     } label: {
                         Text("Show in Finder")
                     }.disabled(deviceContext.volumeRoute == nil)
