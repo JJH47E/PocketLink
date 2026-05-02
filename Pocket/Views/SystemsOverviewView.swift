@@ -12,15 +12,29 @@ struct SystemsOverviewView: View {
     var mountedDeviceURL: URL?
     @State private var selectedPlatform: Platform.ID?
     @State private var showSheet: Bool = false
-    
+    @State private var searchText = ""
+
+    private var filteredPlatforms: [Platform] {
+        guard !searchText.isEmpty else { return platforms }
+        let query = searchText.lowercased()
+        return platforms.filter {
+            $0.name.lowercased().contains(query) || $0.manufacturer.lowercased().contains(query)
+        }
+    }
+
     var body: some View {
         HStack {
-            Table(platforms, selection: $selectedPlatform) {
+            Table(filteredPlatforms, selection: $selectedPlatform) {
                 TableColumn("Platform", value: \.name)
                 TableColumn("Manufacturer", value: \.manufacturer)
                 TableColumn("Year", value: \.year)
             }
-        }.onChange(of: selectedPlatform) { old, new in
+        }
+        .searchable(text: $searchText)
+        .onChange(of: searchText) { _, _ in
+            selectedPlatform = nil
+        }
+        .onChange(of: selectedPlatform) { old, new in
             if new != nil {
                 if (!showSheet) {
                     showSheet.toggle()

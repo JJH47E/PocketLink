@@ -10,14 +10,23 @@ import SwiftUI
 struct GamesOverviewView: View {
     var games: [Game]
     @State private var selectedGame: Game.ID?
-    
+    @State private var searchText = ""
+
+    private var filteredGames: [Game] {
+        guard !searchText.isEmpty else { return games }
+        let query = searchText.lowercased()
+        return games.filter {
+            $0.displayName.lowercased().contains(query) || $0.platform.lowercased().contains(query)
+        }
+    }
+
     var body: some View {
         VStack {
             Table(of: Game.self, selection: $selectedGame) {
                 TableColumn("Platform", value: \.displayName)
                 TableColumn("Platform", value: \.platform)
             } rows: {
-                ForEach(games) { game in
+                ForEach(filteredGames) { game in
                     TableRow(game)
                         .contextMenu {
                             if (game.savePath != nil) {
@@ -40,6 +49,7 @@ struct GamesOverviewView: View {
                 }.disabled(backupAllButtonDisabled()).padding()
             }
         }
+        .searchable(text: $searchText)
     }
     
     func backupAllButtonDisabled() -> Bool {
