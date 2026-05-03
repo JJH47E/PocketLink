@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B935C8AC16C4F618BB3E0E9 /* InstalledCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */; };
+		191247D5CD7B431597F7226F /* CoreManagerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */; };
+		1BA1258D756A4259B64F02CE /* JSONDecoder+Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */; };
+		3121FCA9965D4AD4BE4C0C6D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5F3BF01524BE09E10B328 /* GitHubService.swift */; };
+		3187C7B222844D5598046106 /* CatalogCoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */; };
 		340AD9622C3B0EB800EBE31A /* DeviceOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */; };
-		5CC1255084934EA69172D4B4 /* NoDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997F3AA67C7498C85563723 /* NoDeviceView.swift */; };
 		3415FA022CB5B6CD00503072 /* GamesOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */; };
 		3415FA042CB5B6D800503072 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA032CB5B6D800503072 /* Game.swift */; };
 		3415FA082CB5C21A00503072 /* GameOverviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */; };
@@ -22,48 +26,44 @@
 		346A17B62C3872A800B429FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346A17B52C3872A800B429FB /* Assets.xcassets */; };
 		346A17B92C3872A800B429FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 346A17B82C3872A800B429FB /* Preview Assets.xcassets */; };
 		346A17C42C3872A800B429FB /* PocketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17C32C3872A800B429FB /* PocketTests.swift */; };
-		4E08410E3C71FB20BD2D15F9 /* ROMTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */; };
-		A27EBC3B5B16CC65C8535E12 /* PlatformPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */; };
-		A53EE80DDF4BFA894B131662 /* ROMTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */; };
 		346A17CE2C3872A800B429FB /* PocketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CD2C3872A800B429FB /* PocketUITests.swift */; };
 		346A17D02C3872A800B429FB /* PocketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */; };
 		346A17DF2C38733900B429FB /* DeviceContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17DE2C38733900B429FB /* DeviceContext.swift */; };
-		5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */; };
 		346A17E32C387DDF00B429FB /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E22C387DDF00B429FB /* DeviceInfo.swift */; };
 		346A17E52C38807D00B429FB /* JsonReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E42C38807D00B429FB /* JsonReader.swift */; };
 		346A17E72C38809100B429FB /* DeviceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E62C38809100B429FB /* DeviceUtils.swift */; };
 		346A17E92C3880B200B429FB /* FilesystemUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A17E82C3880B200B429FB /* FilesystemUtils.swift */; };
-		9EA5B50A19624203976BE618 /* VersionComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724ED63D38740CC9C98B6DE /* VersionComparator.swift */; };
 		34A35B9B2CB45889001EFEAB /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9A2CB45889001EFEAB /* StringExtensions.swift */; };
-		1BA1258D756A4259B64F02CE /* JSONDecoder+Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */; };
 		34A35B9D2CB45A41001EFEAB /* CoreListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */; };
 		34A35B9F2CB45B33001EFEAB /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */; };
 		34B18CA92CB2F169008D89B4 /* CoreInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CA82CB2F169008D89B4 /* CoreInfo.swift */; };
 		34B18CAB2CB2F539008D89B4 /* CoreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B18CAA2CB2F539008D89B4 /* CoreListView.swift */; };
-		3121FCA9965D4AD4BE4C0C6D /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B5F3BF01524BE09E10B328 /* GitHubService.swift */; };
+		4AF208A6071748289A7C6F8B /* CoreManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */; };
+		4E08410E3C71FB20BD2D15F9 /* ROMTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */; };
 		556B35E191C44068BC03468C /* CoreDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */; };
 		5939607E69724ADF8C449ED2 /* CoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */; };
+		5CC1255084934EA69172D4B4 /* NoDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9997F3AA67C7498C85563723 /* NoDeviceView.swift */; };
+		5F37A2A5020A4408A8F1B28A /* DeviceMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */; };
 		60EC87FB1D174CACBD7FCB5A /* CoreManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44CFDC1A30EC40A6896DEF69 /* CoreManagerError.swift */; };
-		91697089309544228F265FB1 /* CatalogCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562EC903F5E348DDAB573FC9 /* CatalogCore.swift */; };
-		9BF7E2B1DCF044908D00D766 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */; };
-		0B935C8AC16C4F618BB3E0E9 /* InstalledCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */; };
-		8D437AA96C72454595131281 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D748182B49B4D0FBEEC6819 /* NetworkService.swift */; };
-		FC5648C96C3805141BEC4F11 /* FirmwareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7BC6457410BE668DE0665 /* FirmwareService.swift */; };
-		837A6DF8587C4117A5167C5F /* CatalogFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */; };
-		CE3B4B5BE2E14AC4814E1DB4 /* GitHubReleaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */; };
 		70318342CC9043FB9206F932 /* CatalogCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */; };
-		94E20DEF28CA4F158729302A /* CoreInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */; };
-		ED56B67FDFFA4FB69F45A290 /* CoreManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */; };
-		3187C7B222844D5598046106 /* CatalogCoreRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */; };
-		4AF208A6071748289A7C6F8B /* CoreManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */; };
-		CE991F87768A41BD88D7B75E /* CatalogCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B003E919F4F5A85D2EC18 /* CatalogCacheTests.swift */; };
+		837A6DF8587C4117A5167C5F /* CatalogFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */; };
 		867AD99AE4504E189962ECD3 /* VersionComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */; };
-		191247D5CD7B431597F7226F /* CoreManagerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */; };
+		8D437AA96C72454595131281 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D748182B49B4D0FBEEC6819 /* NetworkService.swift */; };
+		91697089309544228F265FB1 /* CatalogCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562EC903F5E348DDAB573FC9 /* CatalogCore.swift */; };
+		94E20DEF28CA4F158729302A /* CoreInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */; };
+		9BF7E2B1DCF044908D00D766 /* GitHubRelease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */; };
+		9EA5B50A19624203976BE618 /* VersionComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F724ED63D38740CC9C98B6DE /* VersionComparator.swift */; };
 		A0E5193E9A2D45EAB24FC343 /* CoreRemovalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FDB058CD744BFA43D9259 /* CoreRemovalTests.swift */; };
+		A27EBC3B5B16CC65C8535E12 /* PlatformPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */; };
+		A53EE80DDF4BFA894B131662 /* ROMTransferServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */; };
 		AA001122334455667788BB01 /* SaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA01 /* SaveState.swift */; };
 		AA001122334455667788BB02 /* MemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA02 /* MemoryService.swift */; };
 		AA001122334455667788BB03 /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA03 /* MemoriesView.swift */; };
 		AA001122334455667788BB04 /* MemoriesOverviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA04 /* MemoriesOverviewWrapperView.swift */; };
+		CE3B4B5BE2E14AC4814E1DB4 /* GitHubReleaseFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */; };
+		CE991F87768A41BD88D7B75E /* CatalogCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2B003E919F4F5A85D2EC18 /* CatalogCacheTests.swift */; };
+		ED56B67FDFFA4FB69F45A290 /* CoreManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */; };
+		FC5648C96C3805141BEC4F11 /* FirmwareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E7BC6457410BE668DE0665 /* FirmwareService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,8 +84,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRelease.swift; sourceTree = "<group>"; };
+		0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCoreRowView.swift; sourceTree = "<group>"; };
+		16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerView.swift; sourceTree = "<group>"; };
+		1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailView.swift; sourceTree = "<group>"; };
+		22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCache.swift; sourceTree = "<group>"; };
+		27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailViewModel.swift; sourceTree = "<group>"; };
 		340AD9612C3B0EB800EBE31A /* DeviceOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOverviewView.swift; sourceTree = "<group>"; };
-		9997F3AA67C7498C85563723 /* NoDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceView.swift; sourceTree = "<group>"; };
 		3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesOverviewView.swift; sourceTree = "<group>"; };
 		3415FA032CB5B6D800503072 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverviewWrapperView.swift; sourceTree = "<group>"; };
@@ -106,45 +111,40 @@
 		346A17CD2C3872A800B429FB /* PocketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITests.swift; sourceTree = "<group>"; };
 		346A17CF2C3872A800B429FB /* PocketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		346A17DE2C38733900B429FB /* DeviceContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceContext.swift; sourceTree = "<group>"; };
-		860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
 		346A17E22C387DDF00B429FB /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		346A17E42C38807D00B429FB /* JsonReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonReader.swift; sourceTree = "<group>"; };
 		346A17E62C38809100B429FB /* DeviceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtils.swift; sourceTree = "<group>"; };
 		346A17E82C3880B200B429FB /* FilesystemUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesystemUtils.swift; sourceTree = "<group>"; };
-		F724ED63D38740CC9C98B6DE /* VersionComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparator.swift; sourceTree = "<group>"; };
 		34A35B9A2CB45889001EFEAB /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Pocket.swift"; sourceTree = "<group>"; };
 		34A35B9C2CB45A41001EFEAB /* CoreListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListItemView.swift; sourceTree = "<group>"; };
 		34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		34B18CA82CB2F169008D89B4 /* CoreInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfo.swift; sourceTree = "<group>"; };
 		34B18CAA2CB2F539008D89B4 /* CoreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreListView.swift; sourceTree = "<group>"; };
-		C9B5F3BF01524BE09E10B328 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
-		27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailViewModel.swift; sourceTree = "<group>"; };
-		1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDetailView.swift; sourceTree = "<group>"; };
-		44CFDC1A30EC40A6896DEF69 /* CoreManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerError.swift; sourceTree = "<group>"; };
-		562EC903F5E348DDAB573FC9 /* CatalogCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCore.swift; sourceTree = "<group>"; };
-		08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRelease.swift; sourceTree = "<group>"; };
-		DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledCore.swift; sourceTree = "<group>"; };
-		9D748182B49B4D0FBEEC6819 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		A8E7BC6457410BE668DE0665 /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
-		69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferService.swift; sourceTree = "<group>"; };
-		B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPickerView.swift; sourceTree = "<group>"; };
-		B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferServiceTests.swift; sourceTree = "<group>"; };
-		8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFetcher.swift; sourceTree = "<group>"; };
-		7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseFetcher.swift; sourceTree = "<group>"; };
-		22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCache.swift; sourceTree = "<group>"; };
-		A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInstaller.swift; sourceTree = "<group>"; };
-		6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerViewModel.swift; sourceTree = "<group>"; };
-		0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCoreRowView.swift; sourceTree = "<group>"; };
-		16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerView.swift; sourceTree = "<group>"; };
 		3A2B003E919F4F5A85D2EC18 /* CatalogCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCacheTests.swift; sourceTree = "<group>"; };
-		956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparisonTests.swift; sourceTree = "<group>"; };
-		D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerViewModelTests.swift; sourceTree = "<group>"; };
+		44CFDC1A30EC40A6896DEF69 /* CoreManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerError.swift; sourceTree = "<group>"; };
 		554FDB058CD744BFA43D9259 /* CoreRemovalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreRemovalTests.swift; sourceTree = "<group>"; };
+		562EC903F5E348DDAB573FC9 /* CatalogCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCore.swift; sourceTree = "<group>"; };
+		69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferService.swift; sourceTree = "<group>"; };
+		6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerViewModel.swift; sourceTree = "<group>"; };
+		7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReleaseFetcher.swift; sourceTree = "<group>"; };
+		8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogFetcher.swift; sourceTree = "<group>"; };
+		860894A2871A4514B8FB3AE1 /* DeviceMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceMonitor.swift; sourceTree = "<group>"; };
+		956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparisonTests.swift; sourceTree = "<group>"; };
+		9997F3AA67C7498C85563723 /* NoDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDeviceView.swift; sourceTree = "<group>"; };
+		9D748182B49B4D0FBEEC6819 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInstaller.swift; sourceTree = "<group>"; };
+		A8E7BC6457410BE668DE0665 /* FirmwareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareService.swift; sourceTree = "<group>"; };
 		AA001122334455667788AA01 /* SaveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveState.swift; sourceTree = "<group>"; };
 		AA001122334455667788AA02 /* MemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryService.swift; sourceTree = "<group>"; };
 		AA001122334455667788AA03 /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
 		AA001122334455667788AA04 /* MemoriesOverviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesOverviewWrapperView.swift; sourceTree = "<group>"; };
+		B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformPickerView.swift; sourceTree = "<group>"; };
+		B67AD397814F446AA2F6A991 /* JSONDecoder+Pocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Pocket.swift"; sourceTree = "<group>"; };
+		B7616147D7C2AA37656AF92C /* ROMTransferServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ROMTransferServiceTests.swift; sourceTree = "<group>"; };
+		C9B5F3BF01524BE09E10B328 /* GitHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerViewModelTests.swift; sourceTree = "<group>"; };
+		DDE1AB8023C742CD8BFE811C /* InstalledCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstalledCore.swift; sourceTree = "<group>"; };
+		F724ED63D38740CC9C98B6DE /* VersionComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,31 +192,6 @@
 				B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		7268F6D547D1469C96A831AC /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C9B5F3BF01524BE09E10B328 /* GitHubService.swift */,
-				9D748182B49B4D0FBEEC6819 /* NetworkService.swift */,
-				A8E7BC6457410BE668DE0665 /* FirmwareService.swift */,
-				69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */,
-				AA001122334455667788AA02 /* MemoryService.swift */,
-				8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */,
-				7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */,
-				22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */,
-				A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		6C38FA209A08462A9960EC01 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */,
-				6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		346A17A32C3872A700B429FB = {
@@ -317,6 +292,31 @@
 				34A35B9E2CB45B33001EFEAB /* DateExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6C38FA209A08462A9960EC01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				27729DB9E20C44F59A14D16F /* CoreDetailViewModel.swift */,
+				6F1959463AC14A14BB8BBE48 /* CoreManagerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7268F6D547D1469C96A831AC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9B5F3BF01524BE09E10B328 /* GitHubService.swift */,
+				9D748182B49B4D0FBEEC6819 /* NetworkService.swift */,
+				A8E7BC6457410BE668DE0665 /* FirmwareService.swift */,
+				69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */,
+				AA001122334455667788AA02 /* MemoryService.swift */,
+				8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */,
+				7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */,
+				22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */,
+				A3622A06DCB6467499F52EA4 /* CoreInstaller.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -678,7 +678,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jjh.Pocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -709,7 +709,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = jjh.Pocket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
