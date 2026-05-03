@@ -1,6 +1,6 @@
 # PocketLink
 
-<img src="./Assets/pocketx2.png" alt="icon" width="256" height="256">
+![Logo](https://github.com/JJH47E/PocketLink/blob/main/Assets/header.png)
 
 **PocketLink**: an iTunes like utility for the Analogue Pocket.
 

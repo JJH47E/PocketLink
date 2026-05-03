@@ -16,21 +16,13 @@ struct CoreListItemView: View {
                 Text(core.author)
                 Spacer()
                 Text("v\(core.version)")
-            }.font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }.font(.title)
             Group {
                 Text(core.description)
                 if (core.dateRelease != nil) {
                     Text(core.dateRelease!.localizedFormat(dateStyle: .long, timeStyle: .none))
                 }
             }.font(.title3).frame(maxWidth: .infinity, alignment: .leading)
-            if (core.url != nil) {
-                HStack {
-                    Spacer()
-                    Link(destination: core.url!) {
-                        Text(core.url!.absoluteString)
-                    }
-                }
-            }
         }.padding()
     }
 }

@@ -7,16 +7,16 @@
 
 import Foundation
 
-class DeviceInfo : Decodable {
+struct DeviceInfo: Decodable {
     let product: String
     let firmware: DeviceFirmware
 }
 
-class DeviceFirmware : Decodable {
+struct DeviceFirmware: Decodable {
     let runtime: DeviceRuntime
 }
 
-class DeviceRuntime : Decodable {
+struct DeviceRuntime: Decodable {
     let name: String
     let byte: Int
     let buildDate: String

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct DeviceOverviewView: View {
-    // may need to make this state object?
-    var deviceContext: DeviceContext
-    
+    @ObservedObject var deviceContext: DeviceContext
+    var onEject: () -> Void = {}
+
     var body: some View {
         HStack {
             VStack {
@@ -25,7 +25,14 @@ struct DeviceOverviewView: View {
                         .font(.title)
                         .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
                     if let version = deviceContext.firmwareVersion {
-                        Text("Firmware Version: \(version)")
+                        HStack(spacing: 6) {
+                            Text("Firmware Version: \(version)")
+                            if deviceContext.latestFirmwareVersion != nil {
+                                Text("Update available")
+                                    .font(.caption)
+                                    .foregroundColor(.orange)
+                            }
+                        }
                     }
                     if let storageSize = deviceContext.getPrettyStorageCapacity() {
                         Text("Storage: \(storageSize)")
@@ -35,8 +42,13 @@ struct DeviceOverviewView: View {
                 HStack {
                     Spacer()
                     Button {
+                        onEject()
+                    } label: {
+                        Label("Eject", systemImage: "eject")
+                    }
+                    .disabled(deviceContext.volumeRoute == nil || deviceContext.isEjecting)
+                    Button {
                         openFinder(at: deviceContext.volumeRoute!)
-                        
                     } label: {
                         Text("Show in Finder")
                     }.disabled(deviceContext.volumeRoute == nil)
