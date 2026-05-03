@@ -16,18 +16,19 @@ This tool only works when the device is plugged in over USB & the USB transfer o
 
 ## Screenshots
 
+![launch-screenshot](./Assets/launch_screenshot.png)
+
 ![info-screenshot](./Assets/info_screenshot.png)
 
-![systems-screenshot](./Assets/systems_screenshot.png)
+![core-manager-screenshot](./Assets/core_manager_screenshot.png)
 
-![cores-screenshot](./Assets/cores_screenshot.png)
+![core-info-screenshot](./Assets/core_info_screenshot.png)
 
 ## Contributions
 
 Contributions are welcome, some features I'd like to have but haven't added yet are:
 
 - Disk utlization % on Summary page
-- Core installer
 - Export save states (a.k.a. memories)
 - Any `TODO`s you find in code
 
