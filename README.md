@@ -11,7 +11,8 @@ This tool only works when the device is plugged in over USB & the USB transfer o
 ## Features
 
 - View device information such as firmware version & disk space
-- View all installed cores (adding cores yet to be implemented)
+- View all installed cores
+- Install/Update cores
 - View & backup all games & battery saves
 
 ## Screenshots
