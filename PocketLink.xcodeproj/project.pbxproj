@@ -60,6 +60,10 @@
 		867AD99AE4504E189962ECD3 /* VersionComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */; };
 		191247D5CD7B431597F7226F /* CoreManagerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */; };
 		A0E5193E9A2D45EAB24FC343 /* CoreRemovalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554FDB058CD744BFA43D9259 /* CoreRemovalTests.swift */; };
+		AA001122334455667788BB01 /* SaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA01 /* SaveState.swift */; };
+		AA001122334455667788BB02 /* MemoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA02 /* MemoryService.swift */; };
+		AA001122334455667788BB03 /* MemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA03 /* MemoriesView.swift */; };
+		AA001122334455667788BB04 /* MemoriesOverviewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA001122334455667788AA04 /* MemoriesOverviewWrapperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,10 @@
 		956B8744DB5247EE989212C9 /* VersionComparisonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionComparisonTests.swift; sourceTree = "<group>"; };
 		D1899F5C88574D5FA6679A90 /* CoreManagerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManagerViewModelTests.swift; sourceTree = "<group>"; };
 		554FDB058CD744BFA43D9259 /* CoreRemovalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreRemovalTests.swift; sourceTree = "<group>"; };
+		AA001122334455667788AA01 /* SaveState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveState.swift; sourceTree = "<group>"; };
+		AA001122334455667788AA02 /* MemoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryService.swift; sourceTree = "<group>"; };
+		AA001122334455667788AA03 /* MemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesView.swift; sourceTree = "<group>"; };
+		AA001122334455667788AA04 /* MemoriesOverviewWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesOverviewWrapperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +185,8 @@
 				1F991FBC1C2D4B48A9DE1C3D /* CoreDetailView.swift */,
 				3415FA012CB5B6CD00503072 /* GamesOverviewView.swift */,
 				3415FA072CB5C21A00503072 /* GameOverviewWrapperView.swift */,
+				AA001122334455667788AA03 /* MemoriesView.swift */,
+				AA001122334455667788AA04 /* MemoriesOverviewWrapperView.swift */,
 				0EC598F5703E4D10B4FC350B /* CatalogCoreRowView.swift */,
 				16267CA7C3DA4F2BAA768BFA /* CoreManagerView.swift */,
 				B49B480F1B61B68E62B7AD8E /* PlatformPickerView.swift */,
@@ -191,6 +201,7 @@
 				9D748182B49B4D0FBEEC6819 /* NetworkService.swift */,
 				A8E7BC6457410BE668DE0665 /* FirmwareService.swift */,
 				69FA85D61E8F0BE0883E8FB4 /* ROMTransferService.swift */,
+				AA001122334455667788AA02 /* MemoryService.swift */,
 				8296F01E78BE4D2E9B48A6E5 /* CatalogFetcher.swift */,
 				7F1B1EA9524E4E93AC58BF9A /* GitHubReleaseFetcher.swift */,
 				22E7A9D2A4A44425B5C93208 /* CatalogCache.swift */,
@@ -248,6 +259,7 @@
 				343FAC1E2C3C5DCC007A3C77 /* Platform.swift */,
 				34B18CA82CB2F169008D89B4 /* CoreInfo.swift */,
 				3415FA032CB5B6D800503072 /* Game.swift */,
+				AA001122334455667788AA01 /* SaveState.swift */,
 				44CFDC1A30EC40A6896DEF69 /* CoreManagerError.swift */,
 				562EC903F5E348DDAB573FC9 /* CatalogCore.swift */,
 				08B9AC81FF4F46E4B95D51C3 /* GitHubRelease.swift */,
@@ -480,6 +492,10 @@
 				ED56B67FDFFA4FB69F45A290 /* CoreManagerViewModel.swift in Sources */,
 				3187C7B222844D5598046106 /* CatalogCoreRowView.swift in Sources */,
 				4AF208A6071748289A7C6F8B /* CoreManagerView.swift in Sources */,
+				AA001122334455667788BB01 /* SaveState.swift in Sources */,
+				AA001122334455667788BB02 /* MemoryService.swift in Sources */,
+				AA001122334455667788BB03 /* MemoriesView.swift in Sources */,
+				AA001122334455667788BB04 /* MemoriesOverviewWrapperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,11 @@ struct DeviceView: View {
                     Text("Games")
                 }
 
+            MemoriesOverviewWrapperView(mountedVolumeUrl: deviceContext.volumeRoute)
+                .tabItem {
+                    Text("Memories")
+                }
+
             CoreManagerView(volumeRoute: deviceContext.volumeRoute)
                 .tabItem {
                     Text("Cores")
